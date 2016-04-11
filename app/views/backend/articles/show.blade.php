@@ -1,0 +1,1 @@
+E:\projects\aupeo\app/views/articles/show.blade.php

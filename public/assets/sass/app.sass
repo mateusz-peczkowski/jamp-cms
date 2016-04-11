@@ -1,0 +1,64 @@
+@import "compass/css3"
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,latin-ext)
+
+$font-head: 'Open Sans', sans-serif
+
+$light: 300
+$normal: 400
+$bold: 700
+
+$green: #76b72a
+
+html, body
+	min-height: 100%
+
+body
+	font-family: $font-head
+	font-weight: $light
+	font-style: normal
+	font-size: 12px
+	@media screen and (min-width: 640px)
+		font-size: 14px
+	line-height: 170%
+	background: #fff
+	margin: 0
+	width: 100%
+	overflow-x: hidden
+	overflow-y: scroll
+	&.ovh
+		overflow-y: hidden
+	*, *:before, *:after
+		+box-sizing(border-box)
+	*:hover, *:focus
+		outline: none
+		box-shadow: none
+	*:first-child
+		margin-top: 0
+	h1,h2,h3,h4,h5,h6
+		font-family: $font-head
+		font-weight: $bold
+		line-height: 120%
+		&.reg
+			font-weight: $normal
+	h1, .h1
+		font-size: 2.5em
+	h2, .h2
+		font-size: 2.1em
+	h3, .h3
+		font-size: 1.8em
+	h4, .h4
+		font-size: 1.3em
+	h5, .h5
+		font-size: 1em
+	h6, .h6
+		font-size: 0.85em
+	a, &
+		color: #000
+		text-decoration: none
+	a
+		+single_transition(0.4s,color,ease)
+	img
+		max-width: 100%
+	.ttu
+		text-transform: uppercase
