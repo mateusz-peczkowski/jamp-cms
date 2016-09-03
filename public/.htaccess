@@ -7,6 +7,7 @@
 
     #another domains into main
     RewriteCond %{HTTP_HOST} !projectdomain.pl$
+    RewriteCond %{HTTP_HOST} !(.*).dev [NC]
     RewriteRule ^(.*)$ http://projectdomain.pl/$1 [R=301,L]
 
     #www into no www
