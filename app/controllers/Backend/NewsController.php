@@ -11,7 +11,7 @@ class Backend_NewsController extends Backend_BackendController {
 	 */
 	public function index()
 	{
-		$news = News::backend()->order()->get();
+		$news = News::backend()->orderBy('order', 'asc')->get();
 		return View::make('backend.news.index', compact('news'));
 	}
 
@@ -39,8 +39,8 @@ class Backend_NewsController extends Backend_BackendController {
 	{
 		$input = \Input::get();
 		$input['News__slug'] = Str::slug($input['News__title']);
-		$last = News::search(array('order' => array('order', 'desc')), 1);
-		$input['order'] = $last ? $last->order + 1 : 0;
+		$last = News::orderBy('order', 'desc')->first();
+		$input['News__order'] = $last ? $last->order + 1 : 0;
 		return News::modelSave(null, $input);
 	}
 
