@@ -73,6 +73,7 @@ Route::group(array('prefix' => 'cmsbackend', 'before' => 'auth'), function()
 
 	// modules
 	Route::resource('news', 'Backend_NewsController');
+	Route::get('news/sortable', 'Backend_NewsController@sortable');
 	Route::get('news/{id}/galleries', 'Backend_NewsController@galleries');
 	Route::put('news/{id}/activate', 'Backend_NewsController@activate');
 	Route::put('news/{id}/deactivate', 'Backend_NewsController@deactivate');

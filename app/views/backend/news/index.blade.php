@@ -32,7 +32,7 @@
                         <th class="text-center" style="width: 75px;"><i class="fa fa-flash"></i></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="sortable">
 
         	    	@foreach ($news as $num => $new)
                     <?php $change_status_action = $new->status ? 'deactivate' : 'activate'; ?>
@@ -79,6 +79,8 @@
 @stop
 
 @section('page_scripts')
+
+@include('backend.parts.scripts.sortable')
 
 <script src="js/pages/uiTables.js"></script>
 <script>$(function(){ UiTables.init(); });</script>
