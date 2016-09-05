@@ -15,6 +15,7 @@ var UiTables = function() {
             $('.datatable').dataTable({
                 "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 2 ] } ],
                 "iDisplayLength": 10,
+                "order": [[ 0, 'asc' ]],
                 "aLengthMenu": [[5, 10, 20], [5, 10, 20]]
             });
 

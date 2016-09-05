@@ -195,26 +195,26 @@ return array(
                 //             ),
                 //     ),
                 // ),
-                array(
-                    'name'  => trans('backend.product.index'),
-                    'controller'    =>  'Backend_ProductsController',
-                    'action'        =>  'index',
-                    'sub'   =>  array(
-                        array(
-                            'name'          =>  trans('backend.product.edit'),
-                            'controller'    =>  'Backend_ProductsController',
-                            'action'        =>  'edit',
-                            'visible'       =>  false,
-                            ),
-                        array(
-                            'name'          =>  trans('backend.product.create'),
-                            'controller'    =>  'Backend_ProductsController',
-                            'action'        =>  'create',
-                            'visible'       =>  false,
-                            ),
-                    ),
-                    // 'url'   => action('Backend_PartnersController@index'),
-                ),
+                // array(
+                //     'name'  => trans('backend.product.index'),
+                //     'controller'    =>  'Backend_ProductsController',
+                //     'action'        =>  'index',
+                //     'sub'   =>  array(
+                //         array(
+                //             'name'          =>  trans('backend.product.edit'),
+                //             'controller'    =>  'Backend_ProductsController',
+                //             'action'        =>  'edit',
+                //             'visible'       =>  false,
+                //             ),
+                //         array(
+                //             'name'          =>  trans('backend.product.create'),
+                //             'controller'    =>  'Backend_ProductsController',
+                //             'action'        =>  'create',
+                //             'visible'       =>  false,
+                //             ),
+                //     ),
+                //     // 'url'   => action('Backend_PartnersController@index'),
+                // ),
                 // array(
                 //     'name'  => trans('backend.team.index'),
                 //     'controller'    =>  'Backend_TeamsController',
