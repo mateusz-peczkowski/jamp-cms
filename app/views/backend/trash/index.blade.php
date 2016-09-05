@@ -23,7 +23,7 @@
 
                     @foreach ($pages as $num => $trash_itm)
                     <tr data-id="{{ $trash_itm->id }}" class="status-{{ $trash_itm->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $trash_itm->title }}</strong></td>
                         <td class="text-center">
                             <?php
@@ -77,7 +77,7 @@
 
                     @foreach ($products as $num => $trash_itm)
                     <tr data-id="{{ $trash_itm->id }}" class="status-{{ $trash_itm->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $trash_itm->title }}</strong></td>
                         <td class="text-center">
                             <?php
@@ -130,7 +130,7 @@
 
                     @foreach ($faqs as $num => $trash_itm)
                     <tr data-id="{{ $trash_itm->id }}" class="status-{{ $trash_itm->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $trash_itm->title }}</strong></td>
                         <td class="text-center">
                             <?php
@@ -183,7 +183,7 @@
 
                     @foreach ($news as $num => $trash_itm)
                     <tr data-id="{{ $trash_itm->id }}" class="status-{{ $trash_itm->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $trash_itm->title }}</strong></td>
                         <td class="text-center">
                             <?php
@@ -236,7 +236,7 @@
 
                     @foreach ($partners as $num => $trash_itm)
                     <tr data-id="{{ $trash_itm->id }}" class="status-{{ $trash_itm->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $trash_itm->title }}</strong></td>
                         <td class="text-center">
                             <?php
@@ -289,7 +289,7 @@
 
                     @foreach ($presses as $num => $trash_itm)
                     <tr data-id="{{ $trash_itm->id }}" class="status-{{ $trash_itm->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $trash_itm->title }}</strong></td>
                         <td class="text-center">
                             <?php
@@ -342,7 +342,7 @@
 
                     @foreach ($teams as $num => $trash_itm)
                     <tr data-id="{{ $trash_itm->id }}" class="status-{{ $trash_itm->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $trash_itm->title }}</strong></td>
                         <td class="text-center">
                             <?php
@@ -382,7 +382,7 @@
 
 @section('page_scripts')
 
-<script src="js/pages/uiTables.js"></script>
+<script src="/backend/js/pages/uiTables.js"></script>
 <script>$(function(){ UiTables.init(); });</script>
 
 @stop

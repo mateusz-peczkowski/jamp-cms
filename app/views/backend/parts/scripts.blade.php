@@ -10,7 +10,7 @@
 <script src="/backend/js/app.js"></script>
 <script src="/backend/js/imgLiquid-min.js"></script>
 <?php /*
-<script src="/js/plugins/ckeditor/ckeditor.js"></script>
+<script src="/backend/js/plugins/ckeditor/ckeditor.js"></script>
 */?>
 
 <!-- Load and execute javascript code used only in this page -->

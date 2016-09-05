@@ -32,7 +32,7 @@
                     @foreach ($controls as $num => $control)
                     <?php $change_status_action = $control->status ? 'deactivate' : 'activate'; ?>
                     <tr data-id="{{ $control->id }}" class="status-{{ $control->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $control->label }}</strong></td>
                         <td class="text-center">
                             <?php

@@ -37,7 +37,7 @@
         	    	@foreach ($custom_module->records as $num => $record)
 
                     <tr>
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td><strong>{{ $record->title }}</strong></td>
                         <td class="text-center">
                         	<?php
@@ -68,7 +68,7 @@
 
 @section('page_scripts')
 
-<script src="js/pages/uiTables.js"></script>
+<script src="/backend/js/pages/uiTables.js"></script>
 <script>$(function(){ UiTables.init(); });</script>
 
 @stop

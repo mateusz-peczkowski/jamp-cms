@@ -37,7 +37,7 @@
                     <?php $change_status_action = $team->status ? 'deactivate' : 'activate'; ?>
 
                     <tr data-id="{{ $team->id }}"   class="status-{{ $team->status }}">
-                         <td class="text-center handle"><i class="fa fa-sort"></i>&nbsp;&nbsp;&nbsp;{{ $num+1 }}</td>
+                         <td class="text-center handle"><i class="fa fa-sort"></i>&nbsp;&nbsp;&nbsp;{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $team->firstname . ' ' . $team->lastname }}</strong></td>
                         <td class="text-center">
                         	<?php

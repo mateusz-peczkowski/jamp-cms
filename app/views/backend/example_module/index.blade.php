@@ -37,7 +37,7 @@
                     <?php $change_status_action = $element->status ? 'deactivate' : 'activate'; ?>
 
                     <tr data-id="{{ $element->id }}"   class="status-{{ $element->status }}">
-                        <td class="text-center handle"><i class="fa fa-sort"></i>&nbsp;&nbsp;&nbsp;{{ $num+1 }}</td>
+                        <td class="text-center handle"><i class="fa fa-sort"></i>&nbsp;&nbsp;&nbsp;{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         @include('backend.' . $view_dir . '.index_td')
                         <td class="text-center">
                         	<?php

@@ -38,7 +38,7 @@
         	    	@foreach ($pages as $num => $page)
                     <?php $change_status_action = $page->status ? 'deactivate' : 'activate'; ?>
                     <tr class="status-{{ $page->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $page->title }}</strong> {{ $page->url }}</td>
                         <?php /*<td>{{ $page->status }}</td>*/ ?>
                         <td class="text-center">
@@ -83,6 +83,9 @@
 @stop
 
 @section('page_scripts')
+
+<script src="/backend/js/pages/uiTables.js"></script>
+<script>$(function(){ UiTables.init(); });</script>
 
 <script>
 

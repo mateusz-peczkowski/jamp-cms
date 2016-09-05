@@ -37,7 +37,7 @@
         	    	@foreach ($news as $num => $new)
                     <?php $change_status_action = $new->status ? 'deactivate' : 'activate'; ?>
                     <tr data-id="{{ $new->id }}" class="status-{{ $new->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center handle">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $new->title }}</strong></td>
                         <td class="text-center">
                         	<?php
@@ -81,8 +81,5 @@
 @section('page_scripts')
 
 @include('backend.parts.scripts.sortable')
-
-<script src="js/pages/uiTables.js"></script>
-<script>$(function(){ UiTables.init(); });</script>
 
 @stop

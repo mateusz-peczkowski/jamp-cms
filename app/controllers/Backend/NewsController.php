@@ -11,7 +11,7 @@ class Backend_NewsController extends Backend_BackendController {
 	 */
 	public function index()
 	{
-		$news = News::backend()->orderBy('order', 'asc')->get();
+		$news = News::backend()->order()->get();
 		return View::make('backend.news.index', compact('news'));
 	}
 

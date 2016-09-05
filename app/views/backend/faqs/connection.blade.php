@@ -29,7 +29,7 @@ $faqs = $object->connection('Faq', 0);
 	    	@foreach ($faqs as $num => $faq)
             <?php $change_status_action = $faq->status ? 'deactivate' : 'activate'; ?>
             <tr data-id="{{ $faq->id }}" class="status-{{ $faq->status }}">
-                 <td class="text-center handle"><i class="fa fa-sort"></i>&nbsp;&nbsp;&nbsp;{{ $num+1 }}</td>
+                 <td class="text-center handle"><i class="fa fa-sort"></i>&nbsp;&nbsp;&nbsp;{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                 <td class="status"><strong>{{ $faq->question }}</strong></td>
                 <td class="text-center">
                 	<?php

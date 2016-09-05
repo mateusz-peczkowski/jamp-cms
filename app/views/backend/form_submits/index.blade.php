@@ -28,7 +28,7 @@
         </div>
          
         <div class="table-responsive">
-            <table class="table table-striped table-bordered table-vcenter">
+            <table class="datatable table table-striped table-bordered table-vcenter">
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 50px;">ID</th>
@@ -44,7 +44,7 @@
                 <tbody>
                     @foreach ($submits as $num => $submit)
                     <tr data-id="{{ $submit->id }}">
-                         <td class="text-center">{{ $num+1 }}</td>
+                         <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status">
                             {{ $submit->email }} {{ $submit->name }} {{ $submit->firstname }} {{ $submit->lastname }}
                         </td>
@@ -83,7 +83,8 @@
 
 @section('page_scripts')
 
-
+<script src="/backend/js/pages/uiTables.js"></script>
+<script>$(function(){ UiTables.init(); });</script>
 
 
 @stop

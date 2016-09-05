@@ -24,7 +24,7 @@
 
 
         <div class="table-responsive">
-            <table class="table table-striped table-bordered table-vcenter">
+            <table class="datatable table table-striped table-bordered table-vcenter">
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 50px;">ID</th>
@@ -38,7 +38,7 @@
                     <?php $change_status_action = $press->status ? 'deactivate' : 'activate'; ?>
 
                     <tr data-id="{{ $press->id }}"  class="status-{{ $press->status }}">
-                        <td class="text-center">{{ $num+1 }}</td>
+                        <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $press->title }}</strong></td>
                         <td class="text-center">
                         	<?php
@@ -81,5 +81,7 @@
 
 @section('page_scripts')
 
+<script src="/backend/js/pages/uiTables.js"></script>
+<script>$(function(){ UiTables.init(); });</script>
 
 @stop

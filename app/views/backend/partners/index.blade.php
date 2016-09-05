@@ -36,7 +36,7 @@
         	    	@foreach ($partners as $num => $partner)
                     <?php $change_status_action = $partner->status ? 'deactivate' : 'activate'; ?>
                     <tr data-id="{{ $partner->id }}" class="status-{{ $partner->status }}">
-                         <td class="text-center handle"><i class="fa fa-sort"></i>&nbsp;&nbsp;&nbsp;{{ $num+1 }}</td>
+                         <td class="text-center handle"><i class="fa fa-sort"></i>&nbsp;&nbsp;&nbsp;{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
                         <td class="status"><strong>{{ $partner->title }}</strong></td>
                         <td class="text-center">
                         	<?php
