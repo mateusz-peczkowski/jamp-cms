@@ -10,8 +10,8 @@
     	<!-- value -->
     	{{-- JForm::Select2('Form__type', $form, array('elements' => \Config::get('forms.allow_types'), 'value' => $form->type)) --}}
     	{{-- JForm::Editor('Form__body', $form) --}}
-    	{{-- JForm::Text('Form__sender_name', $form) --}}
-    	{{-- JForm::Text('Form__sender_email', $form) --}}
+        {{ JForm::Text('Form__sender_name', $form) }}
+    	{{ JForm::Text('Form__sender_email', $form) }}
         {{ JForm::CheckBox('Form__confirmation', $form) }}
     	{{ JForm::Text('Form__notification_email', $form) }}
         {{ JForm::FormButtons() }}
