@@ -13,6 +13,8 @@
     "tests"
   ],
   "dependencies": {
-    "imgLiquid": "~0.9.944"
+    "imgLiquid": "~0.9.944",
+    "jquery": "1.9.1",
+    "modernizr": "2.8.3"
   }
 }

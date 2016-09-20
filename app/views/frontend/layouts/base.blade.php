@@ -35,11 +35,11 @@
     @include('frontend/parts/favicons') 
 
      <!--styles -->
-     <link rel="stylesheet" type="text/css" href="css/app.css">
+     <link rel="stylesheet" type="text/css" href="/css/app.css">
 
     <!-- base scripts -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="/bower_components/jquery/jquery.min.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
 
     <!-- The HTML5 shiv, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -59,7 +59,7 @@
     <script src="/bower_components/imgLiquid/js/imgLiquid-min.js"></script>
     <script src="/frontend/js/forms.js"></script>
     <script src="/js/trans/{{\Config::get('app.locale')}}.js"></script>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
 
 @show
 

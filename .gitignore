@@ -5,6 +5,5 @@ composer.lock
 .env
 .DS_Store
 Thumbs.db
-/app/config/local
 /public/node_modules/
 /public/.sass-cache/
