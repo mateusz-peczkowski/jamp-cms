@@ -1,8 +1,12 @@
 @extends('frontend.emails.emails')
 
+<?php 
+	$domain = Request::root() ? substr (Request::root(), 7) : false;
+?>
+
 @section('body')
 Dziękujemy za wypełnienie naszego formularza kontaktowego.<br /><br /><br />
-Poniżej przedstawiamy zapytanie jakie zostało do nas przesłane z Pana/i adresu e-mail poprzez formularz na stronie internetowej adresstrony.pl<br /><br /><br />
+Poniżej przedstawiamy zapytanie jakie zostało do nas przesłane z Pana/i adresu e-mail poprzez formularz na stronie internetowej {{ $domain }}<br /><br /><br />
 Na zadane pytania odpowiemy naszybciej jak możemy!<br /><br /><br />
 <table cellspacing="0" cellpadding="0" width="500" bgcolor="#ffffff" border="0" style="margin: 0 auto;">
 	@foreach($submit->form->controls as $control)
