@@ -23,8 +23,24 @@ class GalleryMedia extends BaseModel {
     {
         if (!is_null($image_column))
         {
-            return\Config::get('app.media_path') . $this->$image_column;
+            if (sizeof($params)) {
+                $params = $params;
+            } else {
+                $params = array('crop');
+            }
+
+            if($w == null && $h == null) {
+                return \Config::get('app.media_path') . $this->$image_column;
+            }
+
+            if (!is_null($image_column) && $this->$image_column && $w && $h)
+            {
+                return Image::url((\Config::get('app.media_path') . $this->$image_column),$w,$h,$params);
+            }
         }
+
+        return \Config::get('app.media_path') . $this->$image_column;
+
     }
 
     public function getOriginalAttribute($value)
