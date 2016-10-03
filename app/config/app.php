@@ -122,9 +122,10 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Barryvdh\Debugbar\ServiceProvider',
+		// 'Barryvdh\Debugbar\ServiceProvider',
 		'Neo\WpApi\WpApiServiceProvider',
-		'Thujohn\Twitter\TwitterServiceProvider'
+		'Thujohn\Twitter\TwitterServiceProvider',
+		'Conner\Kint\KintServiceProvider'
 	),
 
 	/*
