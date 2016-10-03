@@ -8,7 +8,8 @@
 		"barryvdh/laravel-debugbar": "~1.8",
 		"vlucas/phpdotenv": "~1.1",
 		"vtalbot/coffee": "1.*",
-		"rtconner/laravel-kint": "~0.0.0"
+		"rtconner/laravel-kint": "~0.0.0",
+		"folklore/image": "0.1.*"
 	},
 	"require-dev": {
     	"way/generators": "~2.0",

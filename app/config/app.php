@@ -125,7 +125,8 @@ return array(
 		// 'Barryvdh\Debugbar\ServiceProvider',
 		'Neo\WpApi\WpApiServiceProvider',
 		'Thujohn\Twitter\TwitterServiceProvider',
-		'Conner\Kint\KintServiceProvider'
+		'Conner\Kint\KintServiceProvider',
+		'Folklore\Image\ImageServiceProvider'
 	),
 
 	/*
@@ -171,6 +172,7 @@ return array(
 		// 'Form'            => 'Illuminate\Support\Facades\Form',
 		'Hash'            => 'Illuminate\Support\Facades\Hash',
 		'HTML'            => 'Illuminate\Support\Facades\HTML',
+		'Image' 		  => 'Folklore\Image\Facades\Image',
 		'Input'           => 'Illuminate\Support\Facades\Input',
 		'Lang'            => 'Illuminate\Support\Facades\Lang',
 		'Log'             => 'Illuminate\Support\Facades\Log',

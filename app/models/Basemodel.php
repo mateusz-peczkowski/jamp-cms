@@ -597,9 +597,15 @@ class BaseModel extends \Eloquent {
     		$image_column = static::$has_image ? 'image' : null;
     	}
 
+    	if (sizeof($params)) {
+    		$params = $params;
+    	} else {
+    		$params = array('crop');
+    	}
+
     	if (!is_null($image_column) && $this->$image_column)
     	{
-    		return \Config::get('app.media_path') . $this->$image_column;
+    		return Image::url((\Config::get('app.media_path') . $this->$image_column),$w,$h,$params);
     	}
     }
 
