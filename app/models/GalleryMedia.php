@@ -21,25 +21,47 @@ class GalleryMedia extends BaseModel {
 
     public function thumb($w, $h, $image_column = 'path', $params = array())
     {
-        if (!is_null($image_column))
+        
+    public function thumb($w, $h, $image_column = 'path', $params = array())
+    {
+        if (is_null($image_column))
         {
-            if (sizeof($params)) {
-                $params = $params;
-            } else {
-                $params = array('crop');
-            }
+            $image_column = static::$has_image ? 'image' : null;
+        }
+        $pathsave = \Config::get('app.thumbs_path');
+        $paththumb = public_path().$pathsave.$w.'x'.$h;
+        $pathreturn = $pathsave.$w.'x'.$h.'/'.$this->$image_column;
+        $pathimg = $paththumb.'/'.$this->$image_column;
 
-            if($w == null && $h == null) {
-                return \Config::get('app.media_path') . $this->$image_column;
-            }
-
-            if (!is_null($image_column) && $this->$image_column && $w && $h)
-            {
-                return Image::url((\Config::get('app.media_path') . $this->$image_column),$w,$h,$params);
-            }
+        if(File::exists($pathimg)) {
+            return $pathreturn;
         }
 
-        return \Config::get('app.media_path') . $this->$image_column;
+
+        $media = \Config::get('app.media_path') . $this->$image_column;
+
+        if (sizeof($params)) {
+            $params = $params;
+        } else {
+            $params = array('crop' => true);
+        }
+
+        $size = array(
+            'width' => $w,
+            'height' => $h
+        );
+
+        $options = array_merge($size, $params);
+
+        if(!File::exists($paththumb)) {
+            File::makeDirectory($paththumb, $mode = 0775, true, true);
+        }
+
+        Image::make($media,$options)->save($pathimg);
+
+        return $pathreturn;
+
+    }
 
     }
 

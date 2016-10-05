@@ -596,21 +596,38 @@ class BaseModel extends \Eloquent {
     	{
     		$image_column = static::$has_image ? 'image' : null;
     	}
+    	$pathsave = \Config::get('app.thumbs_path');
+    	$paththumb = public_path().$pathsave.$w.'x'.$h;
+    	$pathreturn = $pathsave.$w.'x'.$h.'/'.$this->$image_column;
+    	$pathimg = $paththumb.'/'.$this->$image_column;
+
+    	if(File::exists($pathimg)) {
+    		return $pathreturn;
+    	}
+
+
+    	$media = \Config::get('app.media_path') . $this->$image_column;
 
     	if (sizeof($params)) {
     		$params = $params;
     	} else {
-    		$params = array('crop');
+    		$params = array('crop' => true);
     	}
 
-    	if($w == null && $h == null) {
-    		return \Config::get('app.media_path') . $this->$image_column;
+    	$size = array(
+		    'width' => $w,
+		    'height' => $h
+		);
+
+		$options = array_merge($size, $params);
+
+    	if(!File::exists($paththumb)) {
+			File::makeDirectory($paththumb, $mode = 0775, true, true);
     	}
 
-    	if (!is_null($image_column) && $this->$image_column)
-    	{
-    		return Image::url((\Config::get('app.media_path') . $this->$image_column),$w,$h,$params);
-    	}
+    	Image::make($media,$options)->save($pathimg);
+
+		return $pathreturn;
     }
 
     // additional data
