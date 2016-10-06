@@ -596,11 +596,17 @@ class BaseModel extends \Eloquent {
         {
             $image_column = static::$has_image ? 'image' : null;
         }
+        $imgpath = explode('/', $this->image);
+        $len = sizeof($imgpath);
+        $imgpathbef = '/';
+        for($i = 0; $i < $len-1; $i++) {
+        	$imgpathbef .= $imgpath[$i].'/';
+        }
         $media = \Config::get('app.media_path') . $this->$image_column;
         $pathsave = \Config::get('app.thumbs_path');
-        $paththumb = public_path().$pathsave.$w.'x'.$h;
+        $paththumb = public_path().$pathsave.$w.'x'.$h.$imgpathbef;
         $pathreturn = $pathsave.$w.'x'.$h.'/'.$this->$image_column;
-        $pathimg = $paththumb.'/'.$this->$image_column;
+        $pathimg = $paththumb.'/'.$imgpath[$len-1];
 
         if(File::exists($pathimg)) {
             return $pathreturn;
@@ -609,6 +615,8 @@ class BaseModel extends \Eloquent {
         if($w == 0 || $h == 0) {
             return $media;
         }
+
+        
 
         if (sizeof($params)) {
             $params = $params;
