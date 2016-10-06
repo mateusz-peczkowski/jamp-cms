@@ -32,8 +32,26 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'js/app.js': 'assets/coffee/*.coffee'
+          'js/app.js': 'assets/coffee/app.coffee',
+          'js/switch.js': 'assets/coffee/switch.coffee'
         }
+      },
+      glob_to_multiple: {
+        flatten: true,
+        expand: true
+      }
+    },
+    uglify: {
+      options: {
+          banner: '/* JAMPstudio */ \n'
+      },
+      my_target: {
+        files: [{
+          expand: true,
+          cwd: 'js/',
+          src: '**/*.js',
+          dest: 'js/'
+        }]
       }
     },
     imagemin: {
@@ -46,8 +64,8 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'assets/images/',
                 src: [
-                  '**/*.{png,jpg,gif}',
-                  '*.{png,jpg,gif}'
+                  '**/*.{png,jpg,gif,svg}',
+                  '*.{png,jpg,gif,svg}'
                 ], // Actual patterns to match
                 dest: 'images/'                  // Destination path prefix
             }]
@@ -123,6 +141,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-copy');
