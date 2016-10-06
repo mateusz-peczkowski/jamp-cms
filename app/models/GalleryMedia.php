@@ -28,6 +28,7 @@ class GalleryMedia extends BaseModel {
         {
             $image_column = static::$has_image ? 'image' : null;
         }
+        $media = \Config::get('app.media_path') . $this->$image_column;
         $pathsave = \Config::get('app.thumbs_path');
         $paththumb = public_path().$pathsave.$w.'x'.$h;
         $pathreturn = $pathsave.$w.'x'.$h.'/'.$this->$image_column;
@@ -37,8 +38,9 @@ class GalleryMedia extends BaseModel {
             return $pathreturn;
         }
 
-
-        $media = \Config::get('app.media_path') . $this->$image_column;
+        if($w == 0 || $h == 0) {
+            return $media;
+        }
 
         if (sizeof($params)) {
             $params = $params;
