@@ -199,6 +199,7 @@ return array(
 	),
 
 	'media_path'	=>	'/source/',
+	'thumbs_path'	=>	'/thumbs/',
 	'filemanager'	=>	array(
 		'key' =>	'p8whzb8Rjg5',
 		'path'	=>	'/backend/filemanager/dialog.php?akey=p8whzb8Rjg5&',
