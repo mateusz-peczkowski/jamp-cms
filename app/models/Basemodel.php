@@ -596,7 +596,7 @@ class BaseModel extends \Eloquent {
         {
             $image_column = static::$has_image ? 'image' : null;
         }
-        $imgpath = explode('/', $this->image);
+        $imgpath = explode('/', $this->$image_column);
         $len = sizeof($imgpath);
         $imgpathbef = '/';
         for($i = 0; $i < $len-1; $i++) {
