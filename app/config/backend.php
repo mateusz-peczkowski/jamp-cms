@@ -4,9 +4,9 @@ return array(
 
     'template' => array(
         'client_name'       =>  'JAMPsystem',
-        // 'name'              => 'webreligion.co based on jampsystem v1.4',
-        'name'              => 'JAMPsystem based on jampsystem v1.4',
-        'signature'         =>  'Created for JAMPsystem<br><span id="year-copy"></span> &copy; <a href="http://jampstudio.pl" target="_blank">jampstudio.pl</a> based on <a href="http://system.jampstudio.pl" target="_blank">jampsystem v1.4</a>',
+        // 'name'              => 'webreligion.co based on jampsystem v1.6',
+        'name'              => 'JAMPsystem based on jampsystem v1.6',
+        'signature'         =>  'Created for JAMPsystem<br><span id="year-copy"></span> &copy; <a href="http://jampstudio.pl" target="_blank">jampstudio.pl</a> based on <a href="http://system.jampstudio.pl" target="_blank">jampsystem v1.6</a>',
         'version'           => '',
         'author'            => 'JAMPsystem',
         'robots'            => 'noindex, nofollow',
