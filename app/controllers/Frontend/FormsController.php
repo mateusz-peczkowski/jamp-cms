@@ -34,6 +34,18 @@ class Frontend_FormsController extends \Frontend_FrontendController
 			}
 			*/
 
+			$rules = array(
+			    'email'     => "required|email",
+			    'my_name'   => 'honeypot',
+			    'my_time'   => 'required|honeytime:5'
+			);
+
+			$validator = Validator::make($input, $rules);
+
+			if($validator->fails()) {
+				return $this->ReturnMsg(0, $validation, $ajax, $form);
+			}
+
 			$now = new DateTime;
 			$submit = array(
 				'form_id'	=>	$form->id,

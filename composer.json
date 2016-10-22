@@ -9,7 +9,8 @@
 		"vlucas/phpdotenv": "~1.1",
 		"vtalbot/coffee": "1.*",
 		"rtconner/laravel-kint": "~0.0.0",
-		"folklore/image": "0.1.*"
+		"folklore/image": "0.1.*",
+		"msurguy/honeypot": "^1.0"
 	},
 	"require-dev": {
     	"way/generators": "~2.0",
