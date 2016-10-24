@@ -1,17 +1,17 @@
 <?php
 
 class GalleryMedia extends BaseModel {
-	protected $fillable = array('title', 'description', 'link', 'link_title', 'type', 'path', 'order', 'gallery_id');
-	public static $map = array('title', 'description', 'link', 'link_title', 'type', 'path', 'order', 'gallery_id');
-	public static $translated_field = array('title', 'description', 'link', 'link_title');
+    protected $fillable = array('title', 'description', 'link', 'link_title', 'type', 'path', 'order', 'gallery_id');
+    public static $map = array('title', 'description', 'link', 'link_title', 'type', 'path', 'order', 'gallery_id');
+    public static $translated_field = array('title', 'description', 'link', 'link_title');
     public static $search_map = array('gallery_id', 'order');
     public static $has_status = false;
     public static $has_image = true;
 
-	// scopes
+    // scopes
     public function scopeType($query, $type)
     {
-    	return $query->whereType($type);
+        return $query->whereType($type);
     }
 
     public function scopeGallery_id($query, $id)
@@ -23,7 +23,7 @@ class GalleryMedia extends BaseModel {
     {
         if (is_null($image_column))
         {
-            $image_column = static::$has_image ? 'image' : null;
+            $image_column = static::$has_image ? 'path' : null;
         }
         $imgpath = explode('/', $this->$image_column);
         $len = sizeof($imgpath);
@@ -44,8 +44,6 @@ class GalleryMedia extends BaseModel {
         if($w == 0 || $h == 0) {
             return $media;
         }
-
-        
 
         if (sizeof($params)) {
             $params = $params;
@@ -70,8 +68,6 @@ class GalleryMedia extends BaseModel {
 
     }
 
-    }
-
     public function getOriginalAttribute($value)
     {
         return $this->path_to_file('path');
@@ -89,13 +85,13 @@ class GalleryMedia extends BaseModel {
 
     // public function image($w = null, $h = null)
     // {
-    // 	if (is_null($w) && is_null($h))
-    // 	{
-    // 		return \Config::get('app.media_path') . $this->path;
-    // 	}
-    // 	else
-    // 	{
-    // 		// thumb
-    // 	}
+    //  if (is_null($w) && is_null($h))
+    //  {
+    //      return \Config::get('app.media_path') . $this->path;
+    //  }
+    //  else
+    //  {
+    //      // thumb
+    //  }
     // }
 }
