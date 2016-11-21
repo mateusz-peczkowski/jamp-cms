@@ -1,5 +1,5 @@
 <?php 
-    $defaultpage = Page::byTag('default');
+    $defaultpage = Page::byTag('default') ? : $global_page;
 ?>
 
 <!DOCTYPE html>

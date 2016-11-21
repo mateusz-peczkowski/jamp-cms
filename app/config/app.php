@@ -124,7 +124,6 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		// 'Barryvdh\Debugbar\ServiceProvider',
 		'Neo\WpApi\WpApiServiceProvider',
-		'Thujohn\Twitter\TwitterServiceProvider',
 		'Conner\Kint\KintServiceProvider',
 		'Folklore\Image\ImageServiceProvider',
 		'Msurguy\Honeypot\HoneypotServiceProvider'
@@ -195,7 +194,6 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Twitter' 		  => 'Thujohn\Twitter\TwitterFacade',
 		'Honeypot'		  => 'Msurguy\Honeypot\HoneypotFacade'
 
 	),
