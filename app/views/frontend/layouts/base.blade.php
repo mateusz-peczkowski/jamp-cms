@@ -35,11 +35,7 @@
     @include('frontend/parts/favicons') 
 
      <!--styles -->
-     <link rel="stylesheet" type="text/css" href="/css/app.css">
-
-    <!-- base scripts -->
-    <script src="/bower_components/jquery/jquery.min.js"></script>
-    <script src="/bower_components/modernizr/modernizr.js"></script>
+     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 
     <!-- The HTML5 shiv, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>

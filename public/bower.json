@@ -1,20 +1,28 @@
 {
-  "name": "ProjectName",
-  "version": "0.0.0",
+  "name": "JAMP starter",
+  "version": "1.0.0",
   "authors": [
-    "JAMPstudio.pl"
+    "Mateusz Pęczkowski <mateusz@jampstudio.pl>"
   ],
   "license": "MIT",
+  "private": true,
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
     "test",
     "tests"
   ],
   "dependencies": {
-    "imgLiquid": "~0.9.944",
-    "jquery": "1.9.1",
-    "modernizr": "2.8.3"
+    "headjs": "~1.0.3",
+    "jquery-migrate": "~1.4.0",
+    "normalize-scss": "~3.0.3",
+    "sweetalert": "~1.1.0",
+    "slick.js": "1.5.8",
+    "jquery.placeholder": "~0.2.4",
+    "fancybox": "2.1.5",
+    "imgLiquid": "0.9.944",
+    "jquery.cookie": "1.4.1",
+    "aos": "~1.1.0",
+    "chosen": "~1.4.2"
   }
 }
