@@ -37,14 +37,6 @@
      <!--styles -->
      <link rel="stylesheet" type="text/css" href="/css/styles.css">
 
-    <!-- The HTML5 shiv, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
-    <!-- js trans -->
-    <script src="/js/trans/{{\Config::get('app.locale')}}.js"></script>
-    
     {{ $global_page->meta('head') }}
 </head>
 <body>
@@ -52,11 +44,7 @@
 @yield('main')
 
 @section('scripts')
-    <script src="/bower_components/imgLiquid/js/imgLiquid-min.js"></script>
-    <script src="/frontend/js/forms.js"></script>
-    <script src="/js/trans/{{\Config::get('app.locale')}}.js"></script>
     <script src="/js/app.js"></script>
-
 @show
 
 {{ $global_page->meta('footer') }}

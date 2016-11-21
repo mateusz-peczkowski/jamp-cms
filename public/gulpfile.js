@@ -131,14 +131,14 @@ function initBrowserify() {
 
 gulp.task('js', initBrowserify);
 
-gulp.task('minify-scripts-headjs', ['js'], function () {
+gulp.task('minify-scripts-trans', ['js'], function () {
     'use strict';
 
     return gulp.src([
-            './src/js/headjs/**/*.js'
+            './src/js/trans/**/*.js'
         ])
         .pipe(uglify())
-        .pipe(gulp.dest('./js'));
+        .pipe(gulp.dest('./js/trans'));
 });
 
 gulp.task('minify-js', function () {
@@ -188,7 +188,7 @@ gulp.task('compress-svg', function() {
         .pipe(gulp.dest('./img/'));
 });
 
-gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-headjs'], function () {
+gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-trans'], function () {
     'use strict';
 
     livereload.listen({
@@ -196,7 +196,7 @@ gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-headjs'], function (
     });
 
     gulp.watch('./src/scss/**/*.scss', ['sass-lint']);
-    gulp.watch(['./src/js/**/*.js', './gulpfile.js'], ['js-lint', 'minify-scripts-headjs']);
+    gulp.watch(['./src/js/**/*.js', './gulpfile.js'], ['js-lint', 'minify-scripts-trans']);
 });
 
 gulp.task('default', ['watch'], function () {

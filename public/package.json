@@ -1,10 +1,10 @@
 {
-  "name": "JAMP starter",
+  "name": "JAMP-starter",
   "authors": [
     "Mateusz Pęczkowski <mateusz@jampstudio.pl>"
   ],
   "license": "ISC",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Good website. Nicely done.",
   "main": "gulpfile.js",
   "dependencies": {
@@ -50,7 +50,6 @@
     ]
   },
   "browser": {
-    "headjs": "./bower_components/headjs/dist/1.0.0/head.min.js",
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "jquerymigrate": "./bower_components/jquery-migrate/jquery-migrate.min.js",
     "sweetalert": "./bower_components/sweetalert/dist/sweetalert.min.js",

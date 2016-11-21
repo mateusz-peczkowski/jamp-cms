@@ -1,5 +1,5 @@
 {
-  "name": "JAMP starter",
+  "name": "JAMP-starter",
   "version": "1.0.0",
   "authors": [
     "Mateusz Pęczkowski <mateusz@jampstudio.pl>"
@@ -13,16 +13,15 @@
     "tests"
   ],
   "dependencies": {
-    "headjs": "~1.0.3",
-    "jquery-migrate": "~1.4.0",
-    "normalize-scss": "~3.0.3",
-    "sweetalert": "~1.1.0",
+    "jquery-migrate": "1.4.0",
+    "normalize-scss": "3.0.3",
+    "sweetalert": "1.1.0",
     "slick.js": "1.5.8",
-    "jquery.placeholder": "~0.2.4",
+    "jquery.placeholder": "0.2.4",
     "fancybox": "2.1.5",
     "imgLiquid": "0.9.944",
     "jquery.cookie": "1.4.1",
-    "aos": "~1.1.0",
-    "chosen": "~1.4.2"
+    "aos": "1.1.0",
+    "chosen": "1.4.2"
   }
 }
