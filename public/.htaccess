@@ -6,13 +6,13 @@
     RewriteEngine On
 
     #another domains into main
-    RewriteCond %{HTTP_HOST} !projectdomain.pl$
+    RewriteCond %{HTTP_HOST} !teamgorka.demo.jampstudio.pl$
     RewriteCond %{HTTP_HOST} !(.*).dev [NC]
-    RewriteRule ^(.*)$ http://projectdomain.pl/$1 [R=301,L]
+    RewriteRule ^(.*)$ http://teamgorka.demo.jampstudio.pl/$1 [R=301,L]
 
     #www into no www
-    RewriteCond %{HTTP_HOST} ^projectdomain.pl(.*) [NC]
-    RewriteRule ^(.*)$ http://www.projectdomain.pl/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^teamgorka.demo.jampstudio.pl(.*) [NC]
+    RewriteRule ^(.*)$ http://www.teamgorka.demo.jampstudio.pl/$1 [R=301,L]
 
     # Redirect Trailing Slashes...
     RewriteRule ^(.*)/$ /$1 [L,R=301]
@@ -23,10 +23,10 @@
     RewriteRule ^ index.php [L]
 
     # robots
-    RewriteCond %{HTTP_HOST} !projectdomain.pl$
+    RewriteCond %{HTTP_HOST} !teamgorka.demo.jampstudio.pl$
     RewriteRule ^robots\.txt$  robots_nonlive.txt [L]
 
-    RewriteCond %{HTTP_HOST} projectdomain.pl$
+    RewriteCond %{HTTP_HOST} teamgorka.demo.jampstudio.pl$
     RewriteRule ^robots\.txt$  robots_live.txt [L]
 </IfModule>
 
