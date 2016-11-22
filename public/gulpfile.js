@@ -1,8 +1,8 @@
 require('es6-promise').polyfill();
 
 
-var user_config     = require('./domain_config.json');
-var DOMAIN          = user_config.DOMAIN || 'system.dev';
+var userconfig     = require('./domain_config.json');
+var DOMAIN          = userconfig.DOMAIN || 'system.dev';
 
 
 var gulp            = require('gulp');

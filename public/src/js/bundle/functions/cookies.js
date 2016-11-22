@@ -28,7 +28,7 @@ export function init() {
         if (getCookie('CookiesPolicyAccepted') !== '') {
             const cookieDiv = document.getElementById('cookieWarning');
             if (cookieDiv) {
-                cookieDiv.style.display = 'none';
+                document.body.classList.add('no-cookie');
             }
         }
     }
@@ -37,7 +37,7 @@ export function init() {
         const exdate = new Date();
         exdate.setDate(exdate.getDate() + 365);
         document.cookie='CookiesPolicyAccepted=1; expires='+exdate.toUTCString();
-        document.getElementById('cookieWarning').style.display='none';
+        document.body.classList.add('no-cookie');
     }
 
     $('.js-cookie-close').click(function () {

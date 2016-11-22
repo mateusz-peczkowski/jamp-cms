@@ -5,7 +5,16 @@
 
 
 // base styles
-@import 'settings';
 @import 'plugins';
+@import 'settings';
 // @import 'icomoon';
 
+// Custom styles for altering the framework compontents
+@import 'override';
+
+// Styles
+// @import 'fonts';
+@import 'base';
+
+// Cookie Info styles
+@import 'cookies';

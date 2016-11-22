@@ -1,0 +1,147 @@
+.fancybox-skin {
+    padding: 0 !important;
+    background: transparent;
+}
+
+.fancybox-close {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(#000, 0.3);
+    color: #fff;
+    transform: scale(1);
+    &:before {
+        content: '\e923';
+        display: block;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 10;
+        width: 14px;
+        height: 14px;
+        margin: auto;
+        color: #000;
+        font-family: $ico;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 0;
+        height: 100%;
+        background: #000;
+        transition: 0.4s max-width ease;
+    }
+    &:hover {
+        color: $c-accent;
+        &:before {
+            color: #fff;
+        }
+        &:after {
+            max-width: 100%;
+        }
+    }
+}
+
+.fancybox-nav span {
+    width: 40px;
+    height: 40px;
+    margin-top: -25px;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(#000, 0.3);
+    visibility: visible;
+    transform: scale(1);
+    &:before {
+        content: '\e916';
+        display: block;
+        position: absolute;
+        top: calc(50% - 9px);
+        left: calc(50% - 8px);
+        z-index: 10;
+        width: 20px;
+        height: 20px;
+        color: #000;
+        font-family: $ico;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 0;
+        height: 100%;
+        background: #000;
+        transition: 0.4s max-width ease;
+    }
+    &:hover {
+        &:before {
+            color: #fff;
+        }
+        &:after {
+            max-width: 100%;
+        }
+    }
+}
+
+.fancybox-prev span {
+    left: 20px;
+    margin-left: 0;
+    &:before {
+        left: calc(50% - 10px);
+    }
+}
+.fancybox-next span {
+    right: 20px;
+    margin-left: 0;
+    &:before {
+        content: '\e917';
+    }
+}
+
+#fancybox-thumbs {
+    ul {
+        li {
+            opacity: 1;
+            a {
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 100;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    opacity: 1;
+                    transition: all 0.3s ease;
+                }
+                &:hover {
+                    &:before {
+                        opacity: 0;
+                    }
+                }
+            }
+            &.active {
+                a {
+                    &:before {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+

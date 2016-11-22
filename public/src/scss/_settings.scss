@@ -1,3 +1,25 @@
-$font-head: 'Open Sans';
-$font-std: 'Roboto';
+$font-head: 'Open Sans', sans-serif;
+$font-std: 'Roboto', sans-serif;
 $ico: 'icomoon';
+
+
+$light: 300;
+$normal: 400;
+$semi: 600;
+$bold: 700;
+
+$c-accent: #2196f3;
+$c-accent-light: lighten($c-accent, 10%);
+
+$c-accent-hover: darken($c-accent, 10%);
+
+$link-hover-decoration: none;
+
+$google-color: #dc4e41;
+$facebook-color: #3b5998;
+$youtube-color: #cf3427;
+$twitter-color: #55acee;
+$tripadvisor-color: #589442;
+$instagram-color: #e95950;
+$vimeo-color: #1ab7ea;
+$pinterest-color: #bd081c;
