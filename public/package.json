@@ -61,5 +61,10 @@
   "browserify-shim": {
     "jquery": "$"
   },
-  "scripts": {}
+  "scripts": {
+    "start": [
+      "bower update",
+      "gulp"
+    ]
+  },
 }
