@@ -1,5 +1,3 @@
-require('slick');
-
 export function horizontal($sliders, slidesNo, infinite, autoplay, arrows) {
     'use strict';
 

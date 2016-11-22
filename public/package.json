@@ -50,6 +50,7 @@
     ]
   },
   "browser": {
+    "headjs": "./bower_components/headjs/dist/1.0.0/head.min.js",
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "jquerymigrate": "./bower_components/jquery-migrate/jquery-migrate.min.js",
     "imgliquid": "./bower_components/imgLiquid/js/imgLiquid.js",
@@ -62,9 +63,6 @@
     "jquery": "$"
   },
   "scripts": {
-    "start": [
-      "bower update",
-      "gulp"
-    ]
-  },
+    "start": "bower update; gulp"
+  }
 }

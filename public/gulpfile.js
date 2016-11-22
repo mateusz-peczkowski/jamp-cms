@@ -193,7 +193,7 @@ gulp.task('compress-svg', function() {
         .pipe(gulp.dest('./img/'));
 });
 
-gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-trans'], function () {
+gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-trans', 'compress-img', 'compress-svg'], function () {
     'use strict';
 
     browserSync.init({
@@ -201,6 +201,8 @@ gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-trans'], function ()
     });
 
     gulp.watch('./src/scss/**/*.scss', ['sass-lint']);
+    gulp.watch('./src/img/**/*.{jpg,gif,png}', ['compress-img']);
+    gulp.watch('./src/img/**/*.svg', ['compress-svg']);
     gulp.watch(['./src/js/**/*.js', './gulpfile.js'], ['js-lint', 'minify-scripts-trans']);
 });
 
