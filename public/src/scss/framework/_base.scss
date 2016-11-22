@@ -1,9 +1,13 @@
 @media #{$xsmall-up} {
 	.columns, .column {
+		float: left;
 		margin: 0 0 20px;
 		padding: 0 1.07143rem;
 		&:last-child {
 			margin-bottom: 0;
+		}
+		&:last-child:not(:first-child):not(.end) {
+			float: right;
 		}
 	}
 	.row {
