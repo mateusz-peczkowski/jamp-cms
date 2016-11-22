@@ -8,7 +8,11 @@
 	}
 	.row {
 		max-width: 85.71429rem;
-		margin: 0 -1.07143rem 20px;
+		margin: 0 auto 20px;
+		.row {
+			margin-right: -1.07143rem;
+			margin-left: -1.07143rem;
+		}
 		&.expanded {
 			max-width: 0;
 		}
