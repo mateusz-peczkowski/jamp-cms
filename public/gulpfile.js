@@ -1,7 +1,8 @@
 require('es6-promise').polyfill();
 
-var livereload      = require('gulp-livereload');
-var file            = require('gulp-file');
+
+var DOMAIN  = 'system.dev';
+
 
 var gulp            = require('gulp');
 var sass            = require('gulp-sass');
@@ -24,6 +25,8 @@ var stylish         = require('jshint-stylish');
 var lost            = require('lost');
 var postcss         = require('gulp-postcss');
 var cssMqpacker     = require('css-mqpacker');
+
+var browserSync = require('browser-sync').create();
 
 
 var imagemin = require('gulp-imagemin');
@@ -50,7 +53,8 @@ gulp.task('sass', function () {
             ).on('error', sass.logError)
         )
         .pipe(postcss(processors))
-        .pipe(gulp.dest(relativePathDistCSSFolder));
+        .pipe(gulp.dest(relativePathDistCSSFolder))
+        .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('minify-css', ['sass'], function () {
@@ -66,8 +70,7 @@ gulp.task('minify-css', ['sass'], function () {
 
     return gulp.src(relativePathDistCSSFolder + '/styles.css')
         .pipe(minify)
-        .pipe(gulp.dest(relativePathDistCSSFolder))
-        .pipe(livereload());
+        .pipe(gulp.dest(relativePathDistCSSFolder));
 });
 
 gulp.task('sass-lint', ['minify-css'], function () {
@@ -89,9 +92,11 @@ gulp.task('js-lint', ['js'], function() {
             './gulpfile.js',
 
             '!./src/js/customs/**/*.js',
+            '!./src/js/trans/**/*.js'
         ])
         .pipe(jshint())
-        .pipe(jshint.reporter(stylish));
+        .pipe(jshint.reporter(stylish))
+        .pipe(browserSync.reload({ stream: true }));
         //.pipe(jshint.reporter('fail'));
 });
 
@@ -191,8 +196,8 @@ gulp.task('compress-svg', function() {
 gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-trans'], function () {
     'use strict';
 
-    livereload.listen({
-        start: true
+    browserSync.init({
+        proxy: DOMAIN
     });
 
     gulp.watch('./src/scss/**/*.scss', ['sass-lint']);

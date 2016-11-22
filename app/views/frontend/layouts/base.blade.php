@@ -35,7 +35,7 @@
     @include('frontend/parts/favicons') 
 
      <!--styles -->
-     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+     <link rel="stylesheet" type="text/css" href="/css/app.css">
 
     {{ $global_page->meta('head') }}
 </head>

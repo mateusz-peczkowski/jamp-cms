@@ -103,6 +103,7 @@
         "mapRes"                : false,
         "markersGlobal"         : false,
         "google"                : false,
-        "MarkerWithLabel"       : false
+        "MarkerWithLabel"       : false,
+        "translations"          : false
     } // additional predefined global variables
 }

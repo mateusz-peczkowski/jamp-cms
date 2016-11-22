@@ -1,9 +1,13 @@
 @charset 'utf-8';
 
 //// Fontface embeding
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:900,900i&subset=latin-ext);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:900,900i&subset=latin-ext');
 
 
 // base styles
-@import "settings";
-// @import "icomoon";
+@import 'settings';
+// @import 'icomoon';
+
+body {
+	background: blue;
+}

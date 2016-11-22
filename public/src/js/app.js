@@ -1,3 +1,1 @@
-$(document).read(function() {
-	console.log('test');
-});
+console.log('test3ū');
