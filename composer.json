@@ -35,7 +35,9 @@
 			"mkdir public/source",
 			"chmod -R 777 public/source",
 			"mkdir public/thumbs",
-			"chmod -R 777 public/thumbs"
+			"chmod -R 777 public/thumbs",
+			"cp .env_init .env",
+			"cp public/.sample.domain_config.json public/.domain_config.json"
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
@@ -44,7 +46,9 @@
 			"mkdir public/source",
 			"chmod -R 777 public/source",
 			"mkdir public/thumbs",
-			"chmod -R 777 public/thumbs"
+			"chmod -R 777 public/thumbs",
+			"cp .env_init .env",
+			"cp public/.sample.domain_config.json public/.domain_config.json"
 		],
 		"post-create-project-cmd": [
 			"php artisan key:generate"
