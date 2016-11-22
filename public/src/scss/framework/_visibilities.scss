@@ -1,10 +1,4 @@
 @media #{$xsmall-up} {
-	.xsmall-up-visible {
-		display: block;
-	}
-	.xsmall-up-hidden {
-		display: none;
-	}
 	.small-up-visible {
 		display: none;
 	}
@@ -61,6 +55,31 @@
 	}
 	.xlarge-only-hidden {
 		display: block;
+	}
+
+	.xsmall-down-visible {
+		display: block;
+	}
+	.xsmall-down-hidden {
+		display: none;
+	}
+	.small-down-visible {
+		display: block;
+	}
+	.small-down-hidden {
+		display: none;
+	}
+	.medium-down-visible {
+		display: block;
+	}
+	.medium-down-hidden {
+		display: none;
+	}
+	.large-down-visible {
+		display: block;
+	}
+	.large-down-hidden {
+		display: none;
 	}
 }
 
@@ -128,6 +147,31 @@
 	.xlarge-only-hidden {
 		display: block;
 	}
+
+	.xsmall-down-visible {
+		display: none;
+	}
+	.xsmall-down-hidden {
+		display: block;
+	}
+	.small-down-visible {
+		display: block;
+	}
+	.small-down-hidden {
+		display: none;
+	}
+	.medium-down-visible {
+		display: block;
+	}
+	.medium-down-hidden {
+		display: none;
+	}
+	.large-down-visible {
+		display: block;
+	}
+	.large-down-hidden {
+		display: none;
+	}
 }
 
 @media #{$medium-up} {
@@ -194,6 +238,31 @@
 	.xlarge-only-hidden {
 		display: block;
 	}
+
+	.xsmall-down-visible {
+		display: none;
+	}
+	.xsmall-down-hidden {
+		display: block;
+	}
+	.small-down-visible {
+		display: none;
+	}
+	.small-down-hidden {
+		display: block;
+	}
+	.medium-down-visible {
+		display: block;
+	}
+	.medium-down-hidden {
+		display: none;
+	}
+	.large-down-visible {
+		display: block;
+	}
+	.large-down-hidden {
+		display: none;
+	}
 }
 
 @media #{$large-up} {
@@ -227,6 +296,31 @@
 	.xlarge-up-hidden {
 		display: block;
 	}
+
+	.xsmall-down-visible {
+		display: none;
+	}
+	.xsmall-down-hidden {
+		display: block;
+	}
+	.small-down-visible {
+		display: none;
+	}
+	.small-down-hidden {
+		display: block;
+	}
+	.medium-down-visible {
+		display: none;
+	}
+	.medium-down-hidden {
+		display: block;
+	}
+	.large-down-visible {
+		display: block;
+	}
+	.large-down-hidden {
+		display: none;
+	}
 }
 
 @media #{$large-only} {
@@ -259,6 +353,31 @@
 	}
 	.xlarge-only-hidden {
 		display: block;
+	}
+
+	.xsmall-down-visible {
+		display: none;
+	}
+	.xsmall-down-hidden {
+		display: block;
+	}
+	.small-down-visible {
+		display: none;
+	}
+	.small-down-hidden {
+		display: block;
+	}
+	.medium-down-visible {
+		display: block;
+	}
+	.medium-down-hidden {
+		display: none;
+	}
+	.large-down-visible {
+		display: block;
+	}
+	.large-down-hidden {
+		display: none;
 	}
 }
 
@@ -336,6 +455,31 @@
 	}
 	.xlarge-only-hidden {
 		display: none;
+	}
+
+	.xsmall-down-visible {
+		display: none;
+	}
+	.xsmall-down-hidden {
+		display: block;
+	}
+	.small-down-visible {
+		display: none;
+	}
+	.small-down-hidden {
+		display: block;
+	}
+	.medium-down-visible {
+		display: block;
+	}
+	.medium-down-hidden {
+		display: none;
+	}
+	.large-down-visible {
+		display: none;
+	}
+	.large-down-hidden {
+		display: block;
 	}
 }
 
