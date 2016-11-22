@@ -1,67 +1,4 @@
-$xsmall-up: 'only screen';
-$xsmall-only: 'only screen and (max-width: 25em)';
-$small-up: 'only screen and (min-width: 25.063em)';
-$small-only: 'only screen and (min-width: 30.063em) and (max-width: 40em)';
-$medium-up: 'only screen and (min-width: 40.063em)';
-$medium-only: 'only screen and (min-width: 40.063em) and (max-width: 64em)';
-$large-up: 'only screen and (min-width: 64.063em)';
-$large-only: 'only screen and (min-width: 64.063em) and (max-width: 90em)';
-$xlarge-up: 'only screen and (min-width: 90.063em)';
-
 @media #{$xsmall-up} {
-	.columns, .column {
-		margin: 0 0 20px;
-		padding: 0 1.07143rem;
-		&:last-child {
-			margin-bottom: 0;
-		}
-		&.xsmall-1 {
-			width: 8.33333%;
-		}
-		&.xsmall-2 {
-			width: 16.66667%;
-		}
-		&.xsmall-3 {
-			width: 25%;
-		}
-		&.xsmall-4 {
-			width: 33.33333%;
-		}
-		&.xsmall-5 {
-			width: 41.66667%;
-		}
-		&.xsmall-6 {
-			width: 50%;
-		}
-		&.xsmall-7 {
-			width: 58.33333%;
-		}
-		&.xsmall-8 {
-			width: 66.66667%;
-		}
-		&.xsmall-9 {
-			width: 75%;
-		}
-		&.xsmall-10 {
-			width: 83.33333%;
-		}
-		&.xsmall-11 {
-			width: 91.66667%;
-		}
-		&.xsmall-12 {
-			width: 100%;
-		}
-	}
-	.row {
-		max-width: 85.71429rem;
-		margin: 0 -1.07143rem 20px;
-		&.expanded {
-			max-width: 0;
-		}
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
 	.xsmall-up-visible {
 		display: block;
 	}
@@ -128,47 +65,6 @@ $xlarge-up: 'only screen and (min-width: 90.063em)';
 }
 
 @media #{$small-up} {
-	.columns, .column {
-		&:last-child {
-			margin-bottom: 0;
-		}
-		&.small-1 {
-			width: 8.33333%;
-		}
-		&.small-2 {
-			width: 16.66667%;
-		}
-		&.small-3 {
-			width: 25%;
-		}
-		&.small-4 {
-			width: 33.33333%;
-		}
-		&.small-5 {
-			width: 41.66667%;
-		}
-		&.small-6 {
-			width: 50%;
-		}
-		&.small-7 {
-			width: 58.33333%;
-		}
-		&.small-8 {
-			width: 66.66667%;
-		}
-		&.small-9 {
-			width: 75%;
-		}
-		&.small-10 {
-			width: 83.33333%;
-		}
-		&.small-11 {
-			width: 91.66667%;
-		}
-		&.small-12 {
-			width: 100%;
-		}
-	}
 	.xsmall-up-visible {
 		display: block;
 	}
@@ -235,47 +131,6 @@ $xlarge-up: 'only screen and (min-width: 90.063em)';
 }
 
 @media #{$medium-up} {
-	.columns, .column {
-		&:last-child {
-			margin-bottom: 0;
-		}
-		&.medium-1 {
-			width: 8.33333%;
-		}
-		&.medium-2 {
-			width: 16.66667%;
-		}
-		&.medium-3 {
-			width: 25%;
-		}
-		&.medium-4 {
-			width: 33.33333%;
-		}
-		&.medium-5 {
-			width: 41.66667%;
-		}
-		&.medium-6 {
-			width: 50%;
-		}
-		&.medium-7 {
-			width: 58.33333%;
-		}
-		&.medium-8 {
-			width: 66.66667%;
-		}
-		&.medium-9 {
-			width: 75%;
-		}
-		&.medium-10 {
-			width: 83.33333%;
-		}
-		&.medium-11 {
-			width: 91.66667%;
-		}
-		&.medium-12 {
-			width: 100%;
-		}
-	}
 	.xsmall-up-visible {
 		display: block;
 	}
@@ -342,47 +197,6 @@ $xlarge-up: 'only screen and (min-width: 90.063em)';
 }
 
 @media #{$large-up} {
-	.columns, .column {
-		&:last-child {
-			margin-bottom: 0;
-		}
-		&.large-1 {
-			width: 8.33333%;
-		}
-		&.large-2 {
-			width: 16.66667%;
-		}
-		&.large-3 {
-			width: 25%;
-		}
-		&.large-4 {
-			width: 33.33333%;
-		}
-		&.large-5 {
-			width: 41.66667%;
-		}
-		&.large-6 {
-			width: 50%;
-		}
-		&.large-7 {
-			width: 58.33333%;
-		}
-		&.large-8 {
-			width: 66.66667%;
-		}
-		&.large-9 {
-			width: 75%;
-		}
-		&.large-10 {
-			width: 83.33333%;
-		}
-		&.large-11 {
-			width: 91.66667%;
-		}
-		&.large-12 {
-			width: 100%;
-		}
-	}
 	.xsmall-up-visible {
 		display: block;
 	}
@@ -449,47 +263,6 @@ $xlarge-up: 'only screen and (min-width: 90.063em)';
 }
 
 @media #{$xlarge-up} {
-	.columns, .column {
-		&:last-child {
-			margin-bottom: 0;
-		}
-		&.xlarge-1 {
-			width: 8.33333%;
-		}
-		&.xlarge-2 {
-			width: 16.66667%;
-		}
-		&.xlarge-3 {
-			width: 25%;
-		}
-		&.xlarge-4 {
-			width: 33.33333%;
-		}
-		&.xlarge-5 {
-			width: 41.66667%;
-		}
-		&.xlarge-6 {
-			width: 50%;
-		}
-		&.xlarge-7 {
-			width: 58.33333%;
-		}
-		&.xlarge-8 {
-			width: 66.66667%;
-		}
-		&.xlarge-9 {
-			width: 75%;
-		}
-		&.xlarge-10 {
-			width: 83.33333%;
-		}
-		&.xlarge-11 {
-			width: 91.66667%;
-		}
-		&.xlarge-12 {
-			width: 100%;
-		}
-	}
 	.xlarge-up-visible {
 		display: block;
 	}

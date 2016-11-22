@@ -4,6 +4,13 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:900,900i&subset=latin-ext';
 
 
+// framework styles
+@import 'framework/base';
+@import 'framework/breakpoints';
+@import 'framework/grids';
+@import 'framework/visibilities';
+
+
 // base styles
 @import 'plugins';
 @import 'settings';

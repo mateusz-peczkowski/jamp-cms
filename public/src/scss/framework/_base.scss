@@ -1,0 +1,19 @@
+@media #{$xsmall-up} {
+	.columns, .column {
+		margin: 0 0 20px;
+		padding: 0 1.07143rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.row {
+		max-width: 85.71429rem;
+		margin: 0 -1.07143rem 20px;
+		&.expanded {
+			max-width: 0;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
