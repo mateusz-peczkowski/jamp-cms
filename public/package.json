@@ -52,15 +52,11 @@
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "jquerymigrate": "./bower_components/jquery-migrate/jquery-migrate.min.js",
-    "sweetalert": "./bower_components/sweetalert/dist/sweetalert.min.js",
     "imgliquid": "./bower_components/imgLiquid/js/imgLiquid.js",
     "slick": "./js/edited/slick-edited.js",
     "fancybox": "./bower_components/fancybox/source/jquery.fancybox.pack.js",
-    "placeholder": "./bower_components/jquery.placeholder/jquery.placeholder.min.js",
     "aos": "./bower_components/aos/dist/aos.js",
-    "jquery.cookie": "./bower_components/jquery.cookie/jquery.cookie.js",
-    "tooltipster": "./bower_components/tooltipster/js/jquery.tooltipster.js",
-    "chosen": "./bower_components/chosen/chosen.jquery.min.js"
+    "jquery.cookie": "./bower_components/jquery.cookie/jquery.cookie.js"
   },
   "browserify-shim": {
     "jquery": "$"
