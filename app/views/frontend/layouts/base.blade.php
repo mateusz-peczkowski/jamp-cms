@@ -39,8 +39,10 @@
 
     {{ $global_page->meta('head') }}
 </head>
-<body>
+<body class="{{ isset($isHome) ? 'hp' : 'sec' }}">
 @include('frontend.parts.cookie')
+
+@include('frontend.parts.header')
 
 <div id="wrapper">
 

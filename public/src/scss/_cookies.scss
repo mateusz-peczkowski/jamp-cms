@@ -59,18 +59,20 @@
 }
 
 body {
-    #wrapper {
-        transform: translateY(30px);
-        transition: 0.4s all ease;
-    }
-    &.no-cookie {
-        #wrapper {
-            transform: translateY(0);
+    &.cookie-inited {
+        #wrapper, .header {
+            margin-top: 30px;
+            transition: 0.4s all ease;
         }
-        #cookieWarning {
-            height: 0;
-            opacity: 0;
-            visibility: hidden;
+        &.no-cookie {
+            #wrapper, .header {
+                margin-top: 0;
+            }
+            #cookieWarning {
+                height: 0;
+                opacity: 0;
+                visibility: hidden;
+            }
         }
     }
 }

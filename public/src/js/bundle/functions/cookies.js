@@ -25,6 +25,7 @@ export function init() {
     }
 
     function _checkCookiesPolicy() {
+        document.body.classList.add('cookie-inited');
         if (getCookie('CookiesPolicyAccepted') !== '') {
             const cookieDiv = document.getElementById('cookieWarning');
             if (cookieDiv) {
@@ -46,6 +47,5 @@ export function init() {
         return false;
 
     });
-
     _checkCookiesPolicy();
 }
