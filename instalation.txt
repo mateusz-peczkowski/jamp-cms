@@ -1,23 +1,24 @@
 create repo
 #local
 clone repo
-git remote add jampsystem ssh://jampwinczi@94.152.36.27:22/home/users/jampwinczi/git/system
+git remote add jampsystem ssh://jampwinczi@94.152.36.27:22/home/users/jampwinczi/git/system/
 git pull jampsystem master
 git push origin master
 
+#server
+configurate autodeploy
 create blank database
 configurate .env file
 
-#server
-curl -sS https://getcomposer.org/installer | php
-php composer.phar update
-
 #local
 composer update
+configure .env and public/.domain_config.json
+composer env-init
 
-php artisan migrate:install
-php artisan migrate
-php artisan db:seed
+#grunt
+cd public/
+npm install
+npm start
 
 domyślnie tworzona jest polska wersja językowa
 jezeli strona ma być w innej wersji jezykowej:
