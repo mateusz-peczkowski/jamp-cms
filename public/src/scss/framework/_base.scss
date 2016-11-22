@@ -1,8 +1,8 @@
 @media #{$xsmall-up} {
 	.columns, .column {
-		float: left;
 		margin: 0 0 20px;
 		padding: 0 1.07143rem;
+		float: left;
 		&:last-child {
 			margin-bottom: 0;
 		}
