@@ -50,6 +50,8 @@
     
 </div>
 
+@include('frontend.parts.footer')
+
 @section('scripts')
     <script src="/js/app.js"></script>
     <script src="/js/trans/{{\Config::get('app.locale')}}.js"></script>
