@@ -1,0 +1,28 @@
+*[data-filter] {
+	*[data-filter-list] {
+		position: relative;
+		z-index: 10;
+		min-height: 330px;
+		*[data-filter-watch]:not(.loader):not(.is-active) {
+			display: none;
+		}
+		.loader {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 30;
+			width: auto;
+			height: auto;
+			background: #fff url('/img/loader.svg') center 100px no-repeat;
+		}
+		.empty {
+			display: block;
+			margin: 0;
+			padding: 40px 15px;
+			text-align: center;
+		}
+	}
+}
