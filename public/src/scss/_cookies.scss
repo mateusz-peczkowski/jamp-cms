@@ -4,12 +4,14 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 30px;
+    height: 0;
     padding-top: 5px;
     border-bottom: 1px solid #ccc;
     background: #eee;
     box-sizing: border-box;
+    opacity: 0;
     overflow: hidden;
+    visibility: hidden;
     text-align: center;
     transition: 0.4s all ease;
     & > * {
@@ -18,9 +20,10 @@
         margin: 0;
         padding: 0;
         color: #000;
-        font-family: $font-head;
+        font-family: $font-std;
         font-size: 10px;
         font-weight: 400;
+        line-height: 120%;
     }
     p {
         display: none;
@@ -28,44 +31,50 @@
     strong {
         font-weight: 700;
     }
+    p, strong {
+        padding-top: 2px;
+    }
     .cookie-btn {
         margin-left: 10px;
-        padding: 2px 5px;
+        padding: 5px 5px 3px;
         background: $c-accent;
         color: #fff;
+        line-height: 100%;
         transition: 0.4s all ease;
         &:hover {
             background: $c-accent-hover;
             cursor: pointer;
         }
     }
-    @media screen and (min-width: 1221px) {
-        padding-top: 2px;
-        & > * {
-            font-size: 16px;
-        }
-    }
-    @media screen and (min-width: 981px) {
-        padding-top: 4px;
+    @media screen and (min-width: 1020px) {
+        padding-top: 3px;
         & > * {
             font-size: 13px;
         }
     }
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 800px) {
         p {
             display: inline-block;
         }
+    }
+    @media #{$medium-up} {
+        padding-top: 2px;
     }
 }
 
 body {
     &.cookie-inited {
-        #wrapper, .header {
+        #wrapper, .header, .nav-prim-mobile {
             margin-top: 30px;
             transition: 0.4s all ease;
         }
+        #cookieWarning {
+            height: 30px;
+            opacity: 1;
+            visibility: visible;
+        }
         &.no-cookie {
-            #wrapper, .header {
+            #wrapper, .header, .nav-prim-mobile {
                 margin-top: 0;
             }
             #cookieWarning {
