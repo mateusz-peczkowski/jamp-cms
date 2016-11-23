@@ -18,10 +18,16 @@
 			margin-left: -1.07143rem;
 		}
 		&.expanded {
-			max-width: 0;
+			max-width: none;
 		}
 		&:last-child {
 			margin-bottom: 0;
+		}
+		&:after {
+			content: '';
+			display: table;
+			width: 100%;
+			clear: both;
 		}
 	}
 }
