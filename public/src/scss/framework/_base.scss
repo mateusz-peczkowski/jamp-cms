@@ -12,6 +12,10 @@
 		&.expanded {
 			float: none;
 		}
+		&.centered {
+			float: none;
+			margin: 0 auto;
+		}
 	}
 	.row {
 		max-width: 85.71429rem;
