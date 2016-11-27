@@ -9,6 +9,9 @@
 		&:last-child:not(:first-child):not(.end) {
 			float: right;
 		}
+		&.expanded {
+			float: none;
+		}
 	}
 	.row {
 		max-width: 85.71429rem;
