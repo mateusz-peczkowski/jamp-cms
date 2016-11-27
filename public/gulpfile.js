@@ -194,7 +194,7 @@ gulp.task('compress-svg', function() {
         .pipe(gulp.dest('./img/'));
 });
 
-gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-trans', 'compress-img', 'compress-svg'], function () {
+gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-trans', 'minify-js', 'compress-img', 'compress-svg'], function () {
     'use strict';
 
     browserSync.init({
@@ -206,6 +206,8 @@ gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-trans', 'compress-im
     gulp.watch('./src/img/**/*.svg', ['compress-svg']);
     gulp.watch(['./src/js/**/*.js', './gulpfile.js'], ['js-lint', 'minify-scripts-trans']);
 });
+
+gulp.task('build', ['sass-lint', 'js-lint', 'minify-scripts-trans', 'compress-img', 'compress-svg']);
 
 gulp.task('default', ['watch'], function () {
     'use strict';
