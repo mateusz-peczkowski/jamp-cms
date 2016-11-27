@@ -9,11 +9,10 @@
 		&:last-child:not(:first-child):not(.end) {
 			float: right;
 		}
-		&.expanded {
+		&.expanded, &.centered {
 			float: none;
 		}
 		&.centered {
-			float: none;
 			margin: 0 auto;
 		}
 	}
