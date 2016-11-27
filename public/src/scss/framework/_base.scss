@@ -39,6 +39,14 @@
 	    & > .center {
 	        display: table-cell;
 	        vertical-align: middle;
+	        & > * {
+	        	&:first-child {
+	        		margin-top: 0;
+	        	}
+	        	&:last-child {
+	        		margin-bottom: 0;
+	        	}
+	        }
 	    }
 	}
 }
