@@ -1,8 +1,12 @@
 <?php 
-	function defaultPage() 
+	function defaultPage($ret) 
 	{
 		$defaultpage = Page::byTag('default') ? : $global_page;
-		View::share('defaultpage', $defaultpage);
+		if($ret) {
+			return $defaultpage;
+		} else {
+			View::share('defaultpage', $defaultpage);
+		}
 	}
 	defaultPage();
 
@@ -43,6 +47,7 @@
 
 	function socials()
 	{
+		$defaultpage = defaultPage(true);
 	    $cntSocial = 0;
 	    $socialArray = array(
 	        'fb' => $defaultpage->data('facebook_link')
