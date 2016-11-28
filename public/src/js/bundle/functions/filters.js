@@ -3,16 +3,16 @@ export function horizontal() {
 
     let filters = function() {
         $('[data-filter]').each(function(){
-            var parent = $(this);
-            var filter = parent.data('filter');
+            let parent = $(this);
+            let filter = parent.data('filter');
 
             parent.find('[data-filter-button]').click(function(event) {
                 event.preventDefault();
-                var type = $(this).data('filter-button');
+                let type = $(this).data('filter-button');
                 if($(this).hasClass('is-active')) {
                     return false;
                 }
-                var empty = true;
+                let empty = true;
                 parent.find('[data-filter-button]' ).removeClass('is-active');
                 $(this).addClass('is-active');
 
