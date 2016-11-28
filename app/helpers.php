@@ -33,3 +33,19 @@
 
 	    return 'star';
 	}
+
+	function socials()
+	{
+	    $cntSocial = 0;
+	    $socialArray = array(
+	        'fb' => $defaultpage->data('facebook_link'),
+	    );
+	    foreach($socialArray as $social) {
+	        if($social) {
+	            $cntSocial++;
+	        }
+	    }
+		View::share('socialArray', $socialArray);
+		View::share('cntSocial', $cntSocial);
+	}
+	socials();

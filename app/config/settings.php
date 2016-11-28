@@ -6,14 +6,13 @@ return array(
     ),
 
     'socials'	=> array(
-        'socialFacebook' => 'facebook',
-        'socialInstagram' => 'instagram',
-        'socialTripadvisor' => 'tripadvisor',
-        'socialYoutube' => 'youtube',
-        'socialTwitter' => 'twitter',
-        'socialGoogle' => 'google-plus',
-        'socialPinterest' => 'pinterest',
-        'socialVimeo' => 'vimeo',
+        'fb' => 'facebook',
+        'in' => 'instagram',
+        'yt' => 'youtube',
+        'tw' => 'twitter',
+        'gp' => 'google-plus',
+        'pi' => 'pinterest',
+        'vi' => 'vimeo',
 	)
 
 );
