@@ -1,4 +1,11 @@
 <?php 
+	function defaultPage() 
+	{
+		$defaultpage = Page::byTag('default') ? : $global_page;
+		View::share('defaultpage', $defaultpage);
+	}
+	defaultPage();
+
 	function articlePaths() 
 	{
 		$obj = (object) [
