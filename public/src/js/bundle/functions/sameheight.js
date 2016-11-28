@@ -1,4 +1,4 @@
-export function horizontal() {
+export function init() {
     'use strict';
 
     let equal = function() {
