@@ -38,7 +38,7 @@
 	{
 	    $cntSocial = 0;
 	    $socialArray = array(
-	        'fb' => $defaultpage->data('facebook_link'),
+	        'fb' => $defaultpage->data('facebook_link')
 	    );
 	    foreach($socialArray as $social) {
 	        if($social) {
