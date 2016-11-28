@@ -13,6 +13,7 @@
     box-shadow: 0 0 4px rgba(#000, 0.3);
     color: #fff;
     transform: scale(1);
+    transition: 0.4s background ease;
     &:before {
         content: '\e923';
         display: block;
@@ -28,67 +29,43 @@
         font-size: 16px;
         transition: all 0.3s ease;
     }
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 0;
-        height: 100%;
-        background: #000;
-        transition: 0.4s max-width ease;
-    }
     &:hover {
-        color: $c-accent;
+        background: #000;
         &:before {
             color: #fff;
-        }
-        &:after {
-            max-width: 100%;
         }
     }
 }
 
-.fancybox-nav span {
-    width: 40px;
-    height: 40px;
-    margin-top: -25px;
-    background: #fff;
-    box-shadow: 0 0 4px rgba(#000, 0.3);
-    visibility: visible;
-    transform: scale(1);
-    &:before {
-        content: '\e916';
-        display: block;
-        position: absolute;
-        top: calc(50% - 9px);
-        left: calc(50% - 8px);
-        z-index: 10;
-        width: 20px;
-        height: 20px;
-        color: #000;
-        font-family: $ico;
-        font-size: 18px;
-        transition: color 0.3s ease;
+.fancybox-nav {
+    span {
+        width: 40px;
+        height: 40px;
+        margin-top: -25px;
+        background: #fff;
+        box-shadow: 0 0 4px rgba(#000, 0.3);
+        visibility: visible;
+        transform: scale(1);
+        transition: 0.4s background ease;
+        &:before {
+            content: '\e907';
+            display: block;
+            position: absolute;
+            top: calc(50% - 9px);
+            left: calc(50% - 8px);
+            z-index: 10;
+            width: 20px;
+            height: 20px;
+            color: #000;
+            font-family: $ico;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
     }
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 0;
-        height: 100%;
+    &:hover span {
         background: #000;
-        transition: 0.4s max-width ease;
-    }
-    &:hover {
         &:before {
             color: #fff;
-        }
-        &:after {
-            max-width: 100%;
         }
     }
 }
@@ -104,7 +81,7 @@
     right: 20px;
     margin-left: 0;
     &:before {
-        content: '\e917';
+        content: '\e908';
     }
 }
 
