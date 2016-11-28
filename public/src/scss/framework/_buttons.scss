@@ -7,6 +7,9 @@
 		&.expanded {
 			display: block;
 		}
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	.button-group {
 		display: block;
