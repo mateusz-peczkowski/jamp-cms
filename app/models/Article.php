@@ -1,8 +1,8 @@
 <?php
 
 class Article extends BaseModel {
-	protected $fillable = array('title', 'intro', 'description', 'tag', 'image', 'status', 'link');
-	public static $map = array('title', 'intro', 'description', 'tag', 'image', 'status', 'link');
+	protected $fillable = array('title', 'intro', 'description', 'tag', 'image', 'status', 'link', 'viewinc');
+	public static $map = array('title', 'intro', 'description', 'tag', 'image', 'status', 'link', 'viewinc');
 	public static $translated_field = array('title', 'intro', 'description', 'status', 'link');
     public static $rules = array(
         'title' =>  'required',

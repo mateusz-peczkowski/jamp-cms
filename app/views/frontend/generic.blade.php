@@ -4,5 +4,6 @@
 
 generic
 {{ CMS::trans('test.nowy') }}
+@include('frontend.parts.articles')
 
 @stop

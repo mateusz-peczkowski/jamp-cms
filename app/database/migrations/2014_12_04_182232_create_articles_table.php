@@ -21,6 +21,7 @@ class CreateArticlesTable extends Migration {
 			$table->string('image')->nullable();
 			$table->string('link')->nullable();
 			$table->integer('status');
+			$table->string('viewinc');
 			$table->timestamps();
 		});
 	}

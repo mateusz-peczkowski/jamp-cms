@@ -79,6 +79,7 @@ return array(
 		'title'	=>	'Tytuł',
 		'intro'	=>	'Intro',
 		'description'	=>	'Opis',
+		'viewinc'	=>	'Widok',
 		// 'tag'	=>	'Tag',
 		'image'	=>	'Zdjęcie',
 		'link'	=>	'Link',
