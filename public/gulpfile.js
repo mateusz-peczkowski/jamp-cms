@@ -207,8 +207,6 @@ gulp.task('watch', ['sass-lint', 'js-lint', 'minify-scripts-trans', 'minify-js',
     gulp.watch(['./src/js/**/*.js', './gulpfile.js'], ['js-lint', 'minify-scripts-trans']);
 });
 
-gulp.task('build', ['sass-lint', 'js-lint', 'minify-scripts-trans', 'compress-img', 'compress-svg']);
-
 gulp.task('default', ['watch'], function () {
     'use strict';
 
