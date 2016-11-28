@@ -11,7 +11,7 @@ import * as classListPolyFill from './bundle/helpers/classListPolyFill';
 classListPolyFill.init();
 import * as cookies from './bundle/functions/cookies';
 import * as filters from './bundle/functions/filters';
-import * as sameheight from './bundle/functions/sameheight';
+// import * as sameheight from './bundle/functions/sameheight';
 // import * as fancybox from './bundle/functions/fancybox';
 // import * as slicks from './bundle/functions/slicks';
 // import * as aos from './bundle/functions/aos';
@@ -24,7 +24,7 @@ $(document).ready(function() {
     'use strict';
 	cookies.init();
 	filters.init();
-	sameheight.init();
+	// sameheight.init();
 	// fancybox.init();
 	// slicks.horizontal($('.js-banners-top'), 1, true, true, false);
 });
@@ -34,3 +34,15 @@ $(window).scroll(function() {
     'use strict';
     // AOS.refresh();
 });
+
+
+// $(window).load(function() {
+//     'use strict';
+//     sameheight.init();
+// });
+
+
+// $(window).resize(function() {
+//     'use strict';
+//     sameheight.init();
+// });
