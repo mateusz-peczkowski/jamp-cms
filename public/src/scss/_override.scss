@@ -15,10 +15,10 @@
     transform: scale(1);
     transition: 0.4s background ease;
     &:before {
-        content: '\e923';
+        content: '\e906';
         display: block;
         position: absolute;
-        top: 12px;
+        top: 10px;
         left: 12px;
         z-index: 10;
         width: 14px;
@@ -51,7 +51,7 @@
             content: '\e907';
             display: block;
             position: absolute;
-            top: calc(50% - 9px);
+            top: calc(50% - 10px);
             left: calc(50% - 8px);
             z-index: 10;
             width: 20px;
