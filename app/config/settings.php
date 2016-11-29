@@ -1,18 +1,15 @@
 <?php
-return array(
+    return array(
 
-    'base'   => array(
-        '0' => 'star'
-    ),
+        'base'   => array(
+            '0' => 'star'
+        ),
 
-    'socials'	=> array(
-        'fb' => 'facebook',
-        'in' => 'instagram',
-        'yt' => 'youtube',
-        'tw' => 'twitter',
-        'gp' => 'google-plus',
-        'pi' => 'pinterest',
-        'vi' => 'vimeo',
-	)
+        'socials'   => array(
+            'fb' => 'facebook-letter-logo',
+            'in' => 'instagram-social-network-logo-of-photo-camera',
+            'yt' => 'youtube-play-button',
+            'sn' => 'snapchat',
+        )
 
-);
+    );
