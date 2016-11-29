@@ -1,7 +1,7 @@
 require('es6-promise').polyfill();
 
 
-var userconfig     = require('./domain_config.json');
+var userconfig     = require('./.domain_config.json');
 var DOMAIN          = userconfig.DOMAIN || 'system.dev';
 
 
