@@ -10,7 +10,7 @@ import * as classListPolyFill from './bundle/helpers/classListPolyFill';
 //imports
 classListPolyFill.init();
 import * as cookies from './bundle/functions/cookies';
-import * as filters from './bundle/functions/filters';
+// import * as filters from './bundle/functions/filters';
 // import * as sameheight from './bundle/functions/sameheight';
 // import * as fancybox from './bundle/functions/fancybox';
 // import * as slicks from './bundle/functions/slicks';
@@ -23,7 +23,7 @@ import * as filters from './bundle/functions/filters';
 $(document).ready(function() {
     'use strict';
 	cookies.init();
-	filters.init();
+	// filters.init();
 	// sameheight.init();
 	// fancybox.init();
 	// slicks.horizontal($('.js-banners-top'), 1, true, true, false);
