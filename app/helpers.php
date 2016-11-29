@@ -9,6 +9,16 @@
 		}
 	}
 	defaultPage();
+	function homePage($ret) 
+	{
+		$homePage = Page::byTag('homePage') ? : false;
+		if($ret) {
+			return $homePage;
+		} else {
+			View::share('homePage', $homePage);
+		}
+	}
+	homePage();
 
 	function articlePaths() 
 	{
