@@ -1,9 +1,10 @@
-export function horizontal($sliders, slidesNo, infinite, autoplay, arrows) {
+export function horizontal($sliders, slidesNo, infinite, autoplay, arrows, dots) {
     'use strict';
 
     slidesNo = slidesNo || 3;
     autoplay = autoplay || false;
     arrows = arrows || false;
+    dots = dots || false;
     let slidesRes = slidesNo-1;
     let slidesRes2 = slidesNo-2;
     if (slidesRes < 1) {
@@ -32,7 +33,7 @@ export function horizontal($sliders, slidesNo, infinite, autoplay, arrows) {
                     autoplay: autoplay,
                     autoplaySpeed: 3000,
                     arrows: arrows,
-                    dots: false,
+                    dots: dots,
                     fade: false,
                     infinite: infinite,
                     pauseOnHover: false,
