@@ -3,7 +3,7 @@ export function horizontal($sliders, slidesNo, infinite, autoplay, arrows) {
 
     slidesNo = slidesNo || 3;
     autoplay = autoplay || false;
-    arrows = arrows || true;
+    arrows = arrows || false;
     let slidesRes = slidesNo-1;
     let slidesRes2 = slidesNo-2;
     if (slidesRes < 1) {
