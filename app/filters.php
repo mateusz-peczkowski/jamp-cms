@@ -19,6 +19,10 @@ App::before(function($request)
 	{
 		File::makeDirectory($source_path);
 	}
+	defaultPage(false);
+	homePage(false);
+	articlePaths();
+	socials();
 });
 
 

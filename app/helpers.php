@@ -1,14 +1,4 @@
 <?php 
-	function defaultPage($ret) 
-	{
-		$defaultpage = Page::byTag('default') ? : $global_page;
-		if($ret) {
-			return $defaultpage;
-		} else {
-			View::share('defaultpage', $defaultpage);
-		}
-	}
-	defaultPage();
 	function homePage($ret) 
 	{
 		$homePage = Page::byTag('homePage') ? : false;
@@ -18,7 +8,15 @@
 			View::share('homePage', $homePage);
 		}
 	}
-	homePage();
+	function defaultPage($ret) 
+	{
+		$defaultpage = Page::byTag('default') ? : homePage(true);
+		if($ret) {
+			return $defaultpage;
+		} else {
+			View::share('defaultpage', $defaultpage);
+		}
+	}
 
 	function articlePaths() 
 	{
@@ -42,7 +40,6 @@
 		}
 		View::share('articlespaths', $articlespaths);
 	}
-	articlePaths();
 
 	function iconIdToName($id, $arr = 'base')
 	{
@@ -75,4 +72,3 @@
 			View::share('cntSocial', $cntSocial);
 	    }
 	}
-	socials();
