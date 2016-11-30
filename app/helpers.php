@@ -59,18 +59,20 @@
 	{
 		$defaultpage = defaultPage(true);
 	    $cntSocial = 0;
-	    $socialArray = array(
-	        'fb' => $defaultpage->data('facebook_link'),
-	        'in' => $defaultpage->data('instagram_link'),
-	        'yt' => $defaultpage->data('youtube_link'),
-	        'sn' => $defaultpage->data('snapchat_link')
-	    );
-	    foreach($socialArray as $social) {
-	        if($social) {
-	            $cntSocial++;
-	        }
+	    if($defaultpage) {
+		    $socialArray = array(
+		        'fb' => $defaultpage->data('facebook_link'),
+		        'in' => $defaultpage->data('instagram_link'),
+		        'yt' => $defaultpage->data('youtube_link'),
+		        'sn' => $defaultpage->data('snapchat_link')
+		    );
+		    foreach($socialArray as $social) {
+		        if($social) {
+		            $cntSocial++;
+		        }
+		    }
+			View::share('socialArray', $socialArray);
+			View::share('cntSocial', $cntSocial);
 	    }
-		View::share('socialArray', $socialArray);
-		View::share('cntSocial', $cntSocial);
 	}
 	socials();
