@@ -24,7 +24,6 @@ class Frontend_FormsController extends \Frontend_FrontendController
 
 			*/
 
-			/* TODO unsubscribe newsletter
 
 		   	// Newsletter Unsubscribe
 			if (isset($input['Email']) AND isset($input['Unsubscribe']))
@@ -99,7 +98,6 @@ class Frontend_FormsController extends \Frontend_FrontendController
 				});
 			}
 
-			/* TODO Events
 	        // Main Event
 	        $eventBefore = Event::fire('forms_submit', $submit);
 	        // Specified Event
@@ -162,8 +160,7 @@ class Frontend_FormsController extends \Frontend_FrontendController
 			return \Response::json(array('status' => $status, 'messages' => array($msg), 'redirect' => null));
 		else
 		{
-			// TODO
-			
+
 		}
 	}
 

@@ -32,7 +32,6 @@ class Connection extends BaseModel {
     // record2 have 1 connection to record1
     public static function replace_connection($data)
     {
-        // TODO: check connection exists
         // if the same not delete
         // can update connection
         Connection::where('model1', '=', $data['model1'])
@@ -40,7 +39,6 @@ class Connection extends BaseModel {
                 ->where('record2', '=', $data['record2'])
                 ->delete();
 
-        // TODO: order
         $last = Connection::search(array('model1' => $data['model1'], 'record1' => $data['record1'], 'model2' => $data['model2'], 'order' => array('order', 'desc')), 1);
         $data['order'] = $last ? $last->order + 1 : 0;
 

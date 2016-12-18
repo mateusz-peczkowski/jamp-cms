@@ -4676,8 +4676,6 @@ Handsontable.helper.pageY = function (event) {
 
   /**
    * Utility class that gets and saves data from/to the data source using mapping of columns numbers to object property names
-   * TODO refactor arguments of methods getRange, getText to be numbers (not objects)
-   * TODO remove priv, GridSettings from object constructor
    *
    * @param instance
    * @param priv
@@ -5390,7 +5388,6 @@ Handsontable.helper.pageY = function (event) {
       cellProperties.uncheckedTemplate = false;
     }
 
-    Handsontable.Dom.empty(TD); //TODO identify under what circumstances this line can be removed
 
     var INPUT = clonableINPUT.cloneNode(false); //this is faster than createElement
 
@@ -5986,7 +5983,6 @@ Handsontable.helper.pageY = function (event) {
     var editorSection = this.checkEditorSection();
     var cssTransformOffset;
 
-    // TODO: Refactor this to the new instance.getCell method (from #ply-59), after 0.12.1 is released
     switch(editorSection) {
       case 'top':
         cssTransformOffset = Handsontable.Dom.getCssTransform(this.instance.view.wt.wtScrollbars.vertical.clone.wtTable.holder.parentNode);
@@ -7153,7 +7149,6 @@ Handsontable.helper.pageY = function (event) {
     }
   };
 
-  // TODO: Refactor this with the use of new getCell() after 0.12.1
   SelectEditor.prototype.checkEditorSection = function () {
     if(this.row < this.instance.getSettings().fixedRowsTop) {
       if(this.col < this.instance.getSettings().fixedColumnsLeft) {
@@ -7300,7 +7295,6 @@ var process = function (value, callback) {
         break;
       }
       else if (lowercaseVal === source[s].toLowerCase()) {
-        // changes[i][3] = source[s]; //good match, fix the case << TODO?
         found = true;
         break;
       }
@@ -10660,7 +10654,6 @@ function HandsontableManualColumnMove() {
   };
 
   this.modifyCol = function (col) {
-    //TODO test performance: http://jsperf.com/object-wrapper-vs-primitive/2
     if (this.getSettings().manualColumnMove) {
       if (typeof this.manualColumnPositions[col] === 'undefined') {
         createPositionData(this.manualColumnPositions, col + 1);
@@ -15312,7 +15305,6 @@ var init = function () {
 /**
  * Update headers widths for the group indicators
  */
-// TODO: this needs cleaning up
 var updateHeaderWidths = function () {
   var colgroups = document.querySelectorAll('colgroup');
   for (var i = 0, colgroupsLength = colgroups.length; i < colgroupsLength; i++) {
@@ -16331,7 +16323,6 @@ WalkontableBorder.prototype.hasSetting = function (setting) {
 
 /**
  * WalkontableCellCoords holds cell coordinates (row, column) and few metiod to validate them and retrieve as an array or an object
- * TODO: change interface to WalkontableCellCoords(row, col) everywhere, remove those unnecessary setter and getter functions
  */
 
 function WalkontableCellCoords(row, col) {
@@ -16816,7 +16807,6 @@ WalkontableColumnStrategy.prototype.stretch = function () {
     }
   }
   else if (this.strategy === 'last') {
-    if (this.remainingSize < 0 && containerSize !== Infinity) { //Infinity is with native scroll when the table is wider than the viewport (TODO: test)
       this.cellStretch[this.cellCount - 1] = -this.remainingSize;
       this.remainingSize = 0;
     }
@@ -17601,8 +17591,6 @@ WalkontableHorizontalScrollbarNative.prototype.getLastCell = function () {
   return this.instance.wtTable.getLastVisibleColumn();
 };
 
-//applyToDOM (in future merge it with this.refresh?)
-WalkontableHorizontalScrollbarNative.prototype.applyToDOM = function () {
 };
 
 /**
@@ -17699,19 +17687,15 @@ WalkontableVerticalScrollbarNative.prototype.getLastCell = function () {
 WalkontableVerticalScrollbarNative.prototype.sumCellSizes = function (from, length) {
   var sum = 0;
   while (from < length) {
-    sum += this.instance.wtTable.getRowHeight(from) || this.instance.wtSettings.settings.defaultRowHeight; //TODO optimize getSetting, because this is MUCH faster then getSetting
     from++;
   }
   return sum;
 };
 
 WalkontableVerticalScrollbarNative.prototype.refresh = function (selectionsOnly) {
-  this.applyToDOM();
   WalkontableOverlay.prototype.refresh.call(this, selectionsOnly);
 };
 
-//applyToDOM (in future merge it with this.refresh?)
-WalkontableVerticalScrollbarNative.prototype.applyToDOM = function () {
   var total = this.instance.getSetting('totalRows');
   var headerSize = this.instance.wtViewport.getColumnHeaderHeight();
   this.fixedContainer.style.height = headerSize + this.sumCellSizes(0, total) + 4 + 'px'; //+4 is needed, otherwise vertical scroll appears in Chrome (window scroll mode) - maybe because of fill handle in last row or because of box shadow
@@ -17825,9 +17809,6 @@ WalkontableScrollbars.prototype.refresh = function (selectionsOnly) {
   this.debug && this.debug.refresh(selectionsOnly);
 };
 
-WalkontableScrollbars.prototype.applyToDOM = function () {
-  this.horizontal && this.horizontal.applyToDOM();
-  this.vertical && this.vertical.applyToDOM();
 };
 function WalkontableSelection(settings, cellRange) {
   this.settings = settings;
@@ -18395,13 +18376,11 @@ WalkontableTable.prototype.getFirstVisibleRow = function () {
 };
 
 WalkontableTable.prototype.getFirstRenderedColumn = function () {
-  //TODO change to this.instance.wtViewport.colsCalculator.renderedStartCol when implemented; make sure code calls to getFirstVisibleColumn/getFirstRenderedColumn correctly
   return 0; //currently all columns are rendered
 };
 
 //returns -1 if no column is visible
 WalkontableTable.prototype.getFirstVisibleColumn = function () {
-  //TODO change to this.instance.wtViewport.colsCalculator.visibleStartCol when implemented; make sure code calls to getFirstVisibleColumn/getFirstRenderedColumn correctly
 
   if (this.isWorkingOnClone()){
     if (this.instance.cloneOverlay instanceof WalkontableHorizontalScrollbarNative || this.instance.cloneOverlay instanceof WalkontableCornerScrollbarNative){
@@ -18442,7 +18421,6 @@ WalkontableTable.prototype.getLastVisibleRow = function () {
 
 //returns -1 if no column is visible
 WalkontableTable.prototype.getLastVisibleColumn = function () {
-  //TODO change to this.instance.wtViewport.colsCalculator.visibleEndCol when implemented; make sure code calls to getLastVisibleColumn/getLastRenderedColumn correctly
 
   var instance = this.instance;
 
@@ -18625,7 +18603,6 @@ WalkontableTableRenderer.prototype.render = function () {
 
     this.instance.wtViewport.createCalculators();
 
-    this.instance.wtScrollbars.applyToDOM();
 
     if (workspaceWidth !== this.instance.wtViewport.getWorkspaceWidth()) {
       //workspace width changed though to shown/hidden vertical scrollbar. Let's reapply stretching
@@ -18828,7 +18805,6 @@ WalkontableTableRenderer.prototype.renderRowHeaders = function (row, TR) {
 
 WalkontableTableRenderer.prototype.adjustAvailableNodes = function () {
 
-  this.refreshStretching(); //actually it is wrong position because it assumes rowHeader would be always 50px wide (because we measure before it is filled with text). TODO: debug
 
   //adjust COLGROUP
   this.adjustColGroups();
@@ -19119,7 +19095,6 @@ WalkontableViewport.prototype.getRowHeaderWidth = function () {
           TH = TH.nextSibling;
         }
         else {
-          this.rowHeaderWidth += 50; //yes this is a cheat but it worked like that before, just taking assumption from CSS instead of measuring. TODO: proper fix
         }
       }
     }
@@ -19185,7 +19160,6 @@ WalkontableViewport.prototype.createRowsCalculator = function () {
  */
 WalkontableViewport.prototype.createPreCalculators = function () {
   this.rowsPreCalculator = this.createRowsCalculator();
-  //TODO this.colsPreCalculator = this.createColsCalculator();
 };
 
 /**
@@ -19203,7 +19177,6 @@ WalkontableViewport.prototype.createCalculators = function (oldRowCalculator) {
   else {
     this.rowsCalculator = this.createRowsCalculator();
   }
-  //TODO repeat the above for colsCalculator
 };
 
 /**

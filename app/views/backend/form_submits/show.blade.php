@@ -13,7 +13,6 @@
     	@endforeach
         {{ JForm::Label('FormSubmit__ip', $submit) }}
         {{ JForm::Label('FormSubmit__created_at', $submit) }}
-        <!-- TODO:delete button -->
     {{ JForm::FormClose() }}
     {{ JForm::BlockClose() }}
 

@@ -14,7 +14,6 @@
 
 (function($, undefined){
     
-    // TODO: -
         // ARIA stuff: menuitem, menuitemcheckbox und menuitemradio
         // create <menu> structure if $.support[htmlCommand || htmlMenuitem] and !opt.disableNative
 
@@ -1039,7 +1038,6 @@ var // currently active contextMenu trigger
                             break;
                         
                         case 'sub':
-                            // FIXME: shouldn't this .html() be a .text()?
                             $('<span></span>').html(item._name || item.name).appendTo($t);
                             item.appendTo = item.$node;
                             op.create(item, root);
@@ -1058,7 +1056,6 @@ var // currently active contextMenu trigger
                                     k.callbacks[key] = item.callback;
                                 }
                             });
-                            // FIXME: shouldn't this .html() be a .text()?
                             $('<span></span>').html(item._name || item.name || "").appendTo($t);
                             break;
                     }

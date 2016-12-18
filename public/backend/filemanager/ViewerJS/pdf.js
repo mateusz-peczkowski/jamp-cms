@@ -581,7 +581,6 @@ var Util = PDFJS.Util = (function UtilClosure() {
     return num < 0 ? -1 : 1;
   };
 
-  // TODO(mack): Rename appendToArray
   Util.concatenateToArray = function concatenateToArray(arr1, arr2) {
     Array.prototype.push.apply(arr1, arr2);
   };
@@ -832,7 +831,6 @@ function isPDFFunction(v) {
 
 /**
  * Legacy support for PDFJS Promise implementation.
- * TODO remove eventually
  */
 var LegacyPromise = PDFJS.LegacyPromise = (function LegacyPromiseClosure() {
   return function LegacyPromise() {
@@ -1390,7 +1388,6 @@ var ColorSpace = (function ColorSpaceClosure() {
         // methods are faster than building a map. This mainly offers big speed
         // ups for indexed and alternate colorspaces.
         //
-        // TODO it may be worth while to cache the color map. While running
         // testing I never hit a cache so I will leave that out for now (perhaps
         // we are reparsing colorspaces too much?).
         var allColors = bpc <= 8 ? new Uint8Array(numComponentColors) :
@@ -3182,7 +3179,6 @@ var Annotation = (function AnnotationClosure() {
 
     var color = dict.get('C');
     if (isArray(color) && color.length === 3) {
-      // TODO(mack): currently only supporting rgb; need support different
       // colorspaces
       data.color = color;
     } else {
@@ -3198,7 +3194,6 @@ var Annotation = (function AnnotationClosure() {
       var borderArray = dict.get('Border') || [0, 0, 1];
       data.borderWidth = borderArray[2] || 0;
 
-      // TODO: implement proper support for annotations with line dash patterns.
       var dashArray = borderArray[3];
       if (data.borderWidth > 0 && dashArray && isArray(dashArray)) {
         var dashArrayLength = dashArray.length;
@@ -3241,7 +3236,6 @@ var Annotation = (function AnnotationClosure() {
         'getHtmlElement() should be implemented in subclass');
     },
 
-    // TODO(mack): Remove this, it's not really that helpful.
     getEmptyContainer: function Annotation_getEmptyContainer(tagName, rect) {
       assert(!isWorker,
         'getEmptyContainer() should be called from main thread');
@@ -3328,7 +3322,6 @@ var Annotation = (function AnnotationClosure() {
       return;
     }
 
-    // TODO(mack): Implement FreeText annotations
     if (subtype === 'Link') {
       return LinkAnnotation;
     } else if (subtype === 'Text') {
@@ -3348,7 +3341,6 @@ var Annotation = (function AnnotationClosure() {
     }
   };
 
-  // TODO(mack): Support loading annotation from data
   Annotation.fromData = function Annotation_fromData(data) {
     var subtype = data.subtype;
     var fieldType = data.fieldType;
@@ -3503,7 +3495,6 @@ var TextWidgetAnnotation = (function TextWidgetAnnotationClosure() {
     this.data.textAlignment = Util.getInheritableProperty(params.dict, 'Q');
   }
 
-  // TODO(mack): This dupes some of the logic in CanvasGraphics.setFont()
   function setTextStyles(element, item, fontObj) {
 
     var style = element.style;
@@ -3584,9 +3575,7 @@ var TextWidgetAnnotation = (function TextWidgetAnnotationClosure() {
       var fnArray = [];
       var argsArray = [];
 
-      // TODO(mack): Add support for stroke color
       data.rgb = [0, 0, 0];
-      // TODO THIS DOESN'T MAKE ANY SENSE SINCE THE fnArray IS EMPTY!
       for (var i = 0, n = fnArray.length; i < n; ++i) {
         var fnId = appearanceFnArray[i];
         var args = appearanceArgsArray[i];
@@ -3746,7 +3735,6 @@ var LinkAnnotation = (function LinkAnnotationClosure() {
         } else {
           url = addDefaultProtocolToUrl(url);
         }
-        // TODO: pdf spec mentions urls can be relative to a Base
         // entry in the dictionary.
         if (!isValidUrl(url, false)) {
           url = '';
@@ -3762,7 +3750,6 @@ var LinkAnnotation = (function LinkAnnotationClosure() {
           url = urlDict.get('F') || '';
         }
 
-        // TODO: pdf reference says that GoToR
         // can also have 'NewWindow' attribute
         if (!isValidUrl(url, false)) {
           url = '';
@@ -5824,11 +5811,9 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
     setRenderingIntent: function CanvasGraphics_setRenderingIntent(intent) {
       // Maybe if we one day fully support color spaces this will be important
       // for now we can ignore.
-      // TODO set rendering intent?
     },
     setFlatness: function CanvasGraphics_setFlatness(flatness) {
       // There's no way to control this with canvas, but we can safely ignore.
-      // TODO set flatness?
     },
     setGState: function CanvasGraphics_setGState(states) {
       for (var i = 0, ii = states.length; i < ii; i++) {
@@ -6548,7 +6533,6 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
                                                                         lly,
                                                                         urx,
                                                                         ury) {
-      // TODO According to the spec we're also suppose to ignore any operators
       // that set color or include images while processing this type3 font.
       this.rectangle(llx, lly, urx - llx, ury - lly);
       this.clip();
@@ -6732,7 +6716,6 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
     beginGroup: function CanvasGraphics_beginGroup(group) {
       this.save();
       var currentCtx = this.ctx;
-      // TODO non-isolated groups - according to Rik at adobe non-isolated
       // group results aren't usually that different and they even have tools
       // that ignore this setting. Notes from Rik on implmenting:
       // - When you encounter an transparency group, create a new canvas with
@@ -6746,10 +6729,8 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
       // - remove background color:
       // colorNew = color - alphaNew *colorBackdrop /(1 - alphaNew)
       if (!group.isolated) {
-        info('TODO: Support non-isolated groups.');
       }
 
-      // TODO knockout - supposedly possible with the clever use of compositing
       // modes.
       if (group.knockout) {
         warn('Knockout groups not supported.');
@@ -7084,29 +7065,22 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
     // Marked content
 
     markPoint: function CanvasGraphics_markPoint(tag) {
-      // TODO Marked content.
     },
     markPointProps: function CanvasGraphics_markPointProps(tag, properties) {
-      // TODO Marked content.
     },
     beginMarkedContent: function CanvasGraphics_beginMarkedContent(tag) {
-      // TODO Marked content.
     },
     beginMarkedContentProps: function CanvasGraphics_beginMarkedContentProps(
                                         tag, properties) {
-      // TODO Marked content.
     },
     endMarkedContent: function CanvasGraphics_endMarkedContent() {
-      // TODO Marked content.
     },
 
     // Compatibility
 
     beginCompat: function CanvasGraphics_beginCompat() {
-      // TODO ignore undefined operators (should we do that anyway?)
     },
     endCompat: function CanvasGraphics_endCompat() {
-      // TODO stop ignoring undefined operators
     },
 
     // Helper functions
@@ -7416,7 +7390,6 @@ var FontLoader = {
     var m = /Mozilla\/5.0.*?rv:(\d+).*? Gecko/.exec(userAgent);
     if (m && m[1] >= 14)
       return true;
-    // TODO other browsers
     return false;
   })(),
 
@@ -7533,7 +7506,6 @@ var FontLoader = {
       // Chromium seems to cache fonts based on a hash of the actual font data,
       // so the font must be modified for each load test else it will appear to
       // be loaded already.
-      // TODO: This could maybe be made faster by avoiding the btoa of the full
       // font by splitting it in chunks before hand and padding the font id.
       var data = this.loadTestFont;
       var COMMENT_OFFSET = 976; // has to be on 4 byte boundary (for checksum)

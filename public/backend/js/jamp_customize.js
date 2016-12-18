@@ -105,7 +105,6 @@ function responsive_filemanager_callback(field_id){
 
 	if (window['GalleryMode'] && GalleryMode)
 	{
-		// TODO why sometimes twice callback
 		GalleryMode = false;
 		SendAjax(AddImageUrl, 'POST', {gallery_id:GalleryID, path:matches[1], model:Model, model_id:ModelID});
 	}

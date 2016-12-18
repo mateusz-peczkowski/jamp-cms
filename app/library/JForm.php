@@ -349,8 +349,6 @@ class JForm
 		{
 			return trans($t_key);
 		}
-		// TODO 
-		// if backend.page.title not exists backend.title
 		return trans('backend.' . $t_key);
 	}
 

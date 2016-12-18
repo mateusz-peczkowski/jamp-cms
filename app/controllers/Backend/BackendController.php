@@ -173,7 +173,6 @@ class Backend_BackendController extends \BaseController {
 
 		if ($this->isProfileChanged($profile, $element))
 		{
-			// TODO: update instead delete, create
 			Connection::detach_all(array('model1' => $this->model_name, 'record1' => $element->id, 'model2' => 'Profile'));
 
 			if ($input['Profile__id'])
