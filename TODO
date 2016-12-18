@@ -1,0 +1,38 @@
+COMPOSER UPDATE
+php composer.phar update
+
+TODO
+
+views, js
+
+URL TO css, js
+
+ReloadContainer
+
+SendAjax callback
+
+DateTimePicker
+
+
+
+PHP
+
+lepsze zarządzanie wersjami jezykowymi - mozliwość dodania treści tłumaczenia bez treści w oryginalnym języku
+w głównej tabeli kolumny:
+status 0-nieaktywny,1-aktywny,2-usuniety
+tłumaczenie 0|1 lub lang
+
+moduł tagowania
+
+Naviagtion refresh tree
+
+Datatable filering, reorder
+
+----------------------------------------------------------------------
+galeria
+	edycja Media
+	edycja galerii (tytuł, opis)
+
+	usuwanie galerii
+
+

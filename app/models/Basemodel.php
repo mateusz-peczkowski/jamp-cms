@@ -73,6 +73,7 @@ class BaseModel extends \Eloquent {
 
     public function scopeOrder($query, $params = array())
     {
+    	// TODO: check all model
     	// if (static::$has_order)
     	// {
 	    	$column = isset($params[0]) ? $params[0] : static::$order_column;
@@ -319,7 +320,8 @@ class BaseModel extends \Eloquent {
 			{
 				if (isset($input['action']) && $input['action'] == 'delete')
 				{
-
+					// TODO: delete translation (if field delete all record fields)
+					
 					// delete/change status -> 2
 					$obj->status = 2;
 
@@ -556,6 +558,7 @@ class BaseModel extends \Eloquent {
  			}
  			else
  			{
+ 				// TODO:get count elements
  				$records = $records->first();
  			}
 

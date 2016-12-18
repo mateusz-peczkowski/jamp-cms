@@ -970,7 +970,7 @@ be a descendant of the grid when it is being dragged.
     border-color: #dae0e8;
 }
 
-.fc-state-highlight {
+.fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
     background: #fcf8e3;
 }
 

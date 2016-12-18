@@ -5,6 +5,7 @@
     {{ JForm::FormOpen(action('Backend_FaqCategoriesController@update', array($category->id)), 'PUT') }}
 		{{ JForm::Hidden('FaqCategory__status', 1) }}
         {{ JForm::Text('FaqCategory__title', $category) }}
+        <!-- TODO:delete button -->
         {{ JForm::FormButtons() }}
     {{ JForm::FormClose() }}
 

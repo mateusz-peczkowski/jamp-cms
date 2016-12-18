@@ -581,6 +581,7 @@ var Util = PDFJS.Util = (function UtilClosure() {
     return num < 0 ? -1 : 1;
   };
 
+  // TODO(mack): Rename appendToArray
   Util.concatenateToArray = function concatenateToArray(arr1, arr2) {
     Array.prototype.push.apply(arr1, arr2);
   };
@@ -831,6 +832,7 @@ function isPDFFunction(v) {
 
 /**
  * Legacy support for PDFJS Promise implementation.
+ * TODO remove eventually
  */
 var LegacyPromise = PDFJS.LegacyPromise = (function LegacyPromiseClosure() {
   return function LegacyPromise() {
@@ -1388,6 +1390,7 @@ var ColorSpace = (function ColorSpaceClosure() {
         // methods are faster than building a map. This mainly offers big speed
         // ups for indexed and alternate colorspaces.
         //
+        // TODO it may be worth while to cache the color map. While running
         // testing I never hit a cache so I will leave that out for now (perhaps
         // we are reparsing colorspaces too much?).
         var allColors = bpc <= 8 ? new Uint8Array(numComponentColors) :
@@ -3179,6 +3182,7 @@ var Annotation = (function AnnotationClosure() {
 
     var color = dict.get('C');
     if (isArray(color) && color.length === 3) {
+      // TODO(mack): currently only supporting rgb; need support different
       // colorspaces
       data.color = color;
     } else {
@@ -3194,6 +3198,7 @@ var Annotation = (function AnnotationClosure() {
       var borderArray = dict.get('Border') || [0, 0, 1];
       data.borderWidth = borderArray[2] || 0;
 
+      // TODO: implement proper support for annotations with line dash patterns.
       var dashArray = borderArray[3];
       if (data.borderWidth > 0 && dashArray && isArray(dashArray)) {
         var dashArrayLength = dashArray.length;
@@ -3236,6 +3241,7 @@ var Annotation = (function AnnotationClosure() {
         'getHtmlElement() should be implemented in subclass');
     },
 
+    // TODO(mack): Remove this, it's not really that helpful.
     getEmptyContainer: function Annotation_getEmptyContainer(tagName, rect) {
       assert(!isWorker,
         'getEmptyContainer() should be called from main thread');
@@ -3322,6 +3328,7 @@ var Annotation = (function AnnotationClosure() {
       return;
     }
 
+    // TODO(mack): Implement FreeText annotations
     if (subtype === 'Link') {
       return LinkAnnotation;
     } else if (subtype === 'Text') {
@@ -3341,6 +3348,7 @@ var Annotation = (function AnnotationClosure() {
     }
   };
 
+  // TODO(mack): Support loading annotation from data
   Annotation.fromData = function Annotation_fromData(data) {
     var subtype = data.subtype;
     var fieldType = data.fieldType;
@@ -3495,6 +3503,7 @@ var TextWidgetAnnotation = (function TextWidgetAnnotationClosure() {
     this.data.textAlignment = Util.getInheritableProperty(params.dict, 'Q');
   }
 
+  // TODO(mack): This dupes some of the logic in CanvasGraphics.setFont()
   function setTextStyles(element, item, fontObj) {
 
     var style = element.style;
@@ -3575,7 +3584,9 @@ var TextWidgetAnnotation = (function TextWidgetAnnotationClosure() {
       var fnArray = [];
       var argsArray = [];
 
+      // TODO(mack): Add support for stroke color
       data.rgb = [0, 0, 0];
+      // TODO THIS DOESN'T MAKE ANY SENSE SINCE THE fnArray IS EMPTY!
       for (var i = 0, n = fnArray.length; i < n; ++i) {
         var fnId = appearanceFnArray[i];
         var args = appearanceArgsArray[i];
@@ -3735,6 +3746,7 @@ var LinkAnnotation = (function LinkAnnotationClosure() {
         } else {
           url = addDefaultProtocolToUrl(url);
         }
+        // TODO: pdf spec mentions urls can be relative to a Base
         // entry in the dictionary.
         if (!isValidUrl(url, false)) {
           url = '';
@@ -3750,6 +3762,7 @@ var LinkAnnotation = (function LinkAnnotationClosure() {
           url = urlDict.get('F') || '';
         }
 
+        // TODO: pdf reference says that GoToR
         // can also have 'NewWindow' attribute
         if (!isValidUrl(url, false)) {
           url = '';
@@ -4500,6 +4513,7 @@ var ChunkedStreamManager = (function ChunkedStreamManagerClosure() {
 
 
 
+// TODO(mack): Make use of PDFJS.Util.inherit() when it becomes available
 var BasePdfManager = (function BasePdfManagerClosure() {
   function BasePdfManager() {
     throw new Error('Cannot initialize BaseManagerManager');
@@ -4794,6 +4808,7 @@ var Page = (function PageClosure() {
     },
     loadResources: function(keys) {
       if (!this.resourcesPromise) {
+        // TODO: add async inheritPageProp and remove this.
         this.resourcesPromise = this.pdfManager.ensure(this, 'resources');
       }
       var promise = new LegacyPromise();
@@ -6312,6 +6327,7 @@ var XRef = (function XRefClosure() {
 /**
  * A NameTree is like a Dict but has some adventagous properties, see the spec
  * (7.9.6) for more details.
+ * TODO: implement all the Dict functions and make this more efficent.
  */
 var NameTree = (function NameTreeClosure() {
   function NameTree(root, xref) {
@@ -13621,6 +13637,7 @@ var calculateMD5 = (function calculateMD5Closure() {
     padded[i++] = 0;
     padded[i++] = 0;
     // chunking
+    // TODO ArrayBuffer ?
     var w = new Int32Array(16);
     for (i = 0; i < paddedLength;) {
       for (j = 0; j < 16; ++j, i += 4) {
@@ -14618,6 +14635,7 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
     handleSetFont: function PartialEvaluator_handleSetFont(
                       resources, fontArgs, fontRef, operatorList) {
 
+      // TODO(mack): Not needed?
       var fontName;
       if (fontArgs) {
         fontArgs = fontArgs.slice();
@@ -14671,6 +14689,7 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
                                                    operatorList, xref) {
 
       var self = this;
+      // TODO(mack): This should be rewritten so that this function returns
       // what should be added to the queue during each iteration
       function setGStateForKey(gStateObj, key, value) {
         switch (key) {
@@ -14726,6 +14745,7 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
           case 'SA':
           case 'AIS':
           case 'TK':
+            // TODO implement these operators.
             info('graphic state operator ' + key);
             break;
           default:
@@ -15037,6 +15057,7 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
           var fn = operation.fn;
           var args = operation.args;
           switch (fn) {
+            // TODO: Add support for SAVE/RESTORE and XFORM here.
             case OPS.setFont:
               font = handleSetFont(args[0].name).translated;
               textState.fontSize = args[1];
@@ -15529,6 +15550,7 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
       // According to the spec if 'FontDescriptor' is declared, 'FirstChar',
       // 'LastChar' and 'Widths' should exist too, but some PDF encoders seem
       // to ignore this rule when a variant of a standart font is used.
+      // TODO Fill the width array depending on which of the base font this is
       // a variant.
       var firstChar = dict.get('FirstChar') || 0;
       var lastChar = dict.get('LastChar') || maxCharIndex;
@@ -16031,6 +16053,7 @@ var EvaluatorPreprocessor = (function EvaluatorPreprocessor() {
   };
 
   function EvaluatorPreprocessor(stream, xref) {
+    // TODO(mduan): pass array of knownCommands rather than OP_MAP
     // dictionary
     this.parser = new Parser(new Lexer(stream, OP_MAP), false, xref);
     this.ctm = new Float32Array([1, 0, 0, 1, 0, 0]);
@@ -16087,6 +16110,7 @@ var EvaluatorPreprocessor = (function EvaluatorPreprocessor() {
           }
         }
 
+        // TODO figure out how to type-check vararg functions
 
         this.preprocessCommand(fn, args);
 
@@ -16671,6 +16695,7 @@ function sjisToUnicode(str) {
 function sjis83pvToUnicode(str) {
   var bytes = stringToBytes(str);
   try {
+    // TODO: 83pv has incompatible mappings in ed40..ee9c range.
     return decodeBytes(bytes, 'shift_jis', true);
   } catch (e) {
     warn('Unsupported 83pv character found');
@@ -16682,6 +16707,7 @@ function sjis83pvToUnicode(str) {
 function sjis90pvToUnicode(str) {
   var bytes = stringToBytes(str);
   try {
+    // TODO: 90pv has incompatible mappings in 8740..879c and eb41..ee9c.
     return decodeBytes(bytes, 'shift_jis', true);
   } catch (e) {
     warn('Unsupported 90pv character found');
@@ -18743,6 +18769,7 @@ var Font = (function FontClosure() {
   function validateOS2Table(os2) {
     var stream = new Stream(os2.data);
     var version = int16(stream.getBytes(2));
+    // TODO verify all OS/2 tables fields, but currently we validate only those
     // that give us issues
     stream.getBytes(60); // skipping type, misc sizes, panose, unicode ranges
     var selection = int16(stream.getBytes(2));
@@ -18804,6 +18831,7 @@ var Font = (function FontClosure() {
         }
       }
     } else {
+      // TODO
       firstCharIndex = 0;
       lastCharIndex = 255;
     }
@@ -18963,6 +18991,7 @@ var Font = (function FontClosure() {
         // A (3, 1) table is alredy unicode (Microsoft Unicode format)
         unicode = charcode;
       } else if (platformId === 1 && encodingId === 0) {
+        // TODO(mack): Should apply the changes to convert the
         // MacRomanEncoding to Mac OS Roman encoding in 9.6.6.4
         // table 115 of the pdf spec
         var glyphName = Encodings.MacRomanEncoding[charcode];
@@ -19111,6 +19140,7 @@ var Font = (function FontClosure() {
           // tables (3, 0) or (3, 1) is found, that information is used for
           // deciding if the font is symbolic or not.
           //
+          // TODO(mack): This section needs some more thought on whether the
           // heuristic is good enough. For now, it passes all the regression
           // tests.
           if (isSymbolicFont && platformId === 3 && encodingId === 0) {
@@ -19167,6 +19197,7 @@ var Font = (function FontClosure() {
         var hasShortCmap = false;
         var mappings = [];
 
+        // TODO(mack): refactor this cmap subtable reading logic out
         if (format === 0) {
           for (var j = 0; j < 256; j++) {
             var index = font.getByte();
@@ -20087,6 +20118,7 @@ var Font = (function FontClosure() {
         // Most of the following logic in this code branch is based on the
         // 9.6.6.4 of the PDF spec.
 
+        // TODO(mack):
         // We are using this.hasEncoding to mean that the encoding is either
         // MacRomanEncoding or WinAnsiEncoding (following spec in 9.6.6.4),
         // but this.hasEncoding is currently true for any encodings on the
@@ -20095,6 +20127,7 @@ var Font = (function FontClosure() {
         var cmapTable = readCmapTable(tables.cmap, font, this.hasEncoding,
             this.isSymbolicFont);
 
+        // TODO(mack): If the (3, 0) cmap table used, then the font is
         // symbolic. The range of charcodes in the cmap table should be
         // one of the following:
         //   -> 0x0000 - 0x00FF
@@ -20117,6 +20150,7 @@ var Font = (function FontClosure() {
               cmapPlatformId, cmapEncodingId);
 
           if (!unicode) {
+            // TODO(mack): gotta check if skipping mappings where we cannot find
             // a unicode is the correct behaviour
             continue;
           }
@@ -20164,6 +20198,7 @@ var Font = (function FontClosure() {
           var encoding = properties.baseEncoding;
           var differences = properties.differences;
 
+          // TODO(mack): check if it is necessary to shift control characters
           // for non-symbolic fonts so that browsers dont't render them using
           // space characters
 
@@ -20190,6 +20225,7 @@ var Font = (function FontClosure() {
               glyphName = Encodings.StandardEncoding[charcode];
             }
 
+            // TODO(mack): Handle the case that the glyph name cannot be
             // mapped as specified, in which case the glyph name shall be
             // looked up in the font program's 'post' table (if one is
             // present) and the associated glyph id shall be used.
@@ -20494,6 +20530,7 @@ var Font = (function FontClosure() {
       if (toUnicode) {
         var isIdentityMap = toUnicode.length === 0;
         for (var i = firstChar, ii = lastChar; i <= ii; i++) {
+          // TODO missing map the character according font's CMap
           map[i] = isIdentityMap ? String.fromCharCode(i) : toUnicode[i];
         }
       } else {
@@ -23416,6 +23453,7 @@ var FontRendererFactory = (function FontRendererFactoryClosure() {
            x = arg1;
            y = arg2;
         } else {
+           x = 0; y = 0; // TODO "they are points" ?
         }
         var scaleX = 1, scaleY = 1, scale01 = 0, scale10 = 0;
         if ((flags & 0x08)) {
@@ -28203,6 +28241,7 @@ var PDFImage = (function PDFImageClosure() {
       // var bits = ...
       // var colorspace = ...
     }
+    // TODO cache rendered images?
 
     var dict = image.dict;
     this.width = dict.get('Width', 'W');
@@ -33097,6 +33136,7 @@ var PredictorStream = (function PredictorStreamClosure() {
  */
 var JpegStream = (function JpegStreamClosure() {
   function JpegStream(bytes, dict, xref) {
+    // TODO: per poppler, some images may have 'junk' before that
     // need to be removed
     this.dict = dict;
     this.bytes = bytes;
@@ -35069,6 +35109,7 @@ var JpxImage = (function JpxImageClosure() {
       xhr.open('GET', url, true);
       xhr.responseType = 'arraybuffer';
       xhr.onload = (function() {
+        // TODO catch parse error
         var data = new Uint8Array(xhr.response || xhr.mozResponseArrayBuffer);
         this.parse(data);
         if (this.onload)
@@ -35102,11 +35143,13 @@ var JpxImage = (function JpxImageClosure() {
         var jumpDataLength = true;
         switch (tbox) {
           case 0x6A501A1A: // 'jP\032\032'
+            // TODO
             break;
           case 0x6A703268: // 'jp2h'
             jumpDataLength = false; // parsing child boxes
             break;
           case 0x636F6C72: // 'colr'
+            // TODO
             break;
           case 0x6A703263: // 'jp2c'
             this.parseCodestream(data, position, position + dataLength);
@@ -37781,6 +37824,7 @@ var Jbig2Image = (function Jbig2ImageClosure() {
         }
         textRegion.numberOfSymbolInstances = readUint32(data, position);
         position += 4;
+        // TODO 7.4.3.1.7 Symbol ID Huffman table decoding
         if (textRegion.huffman)
           error('JBIG2 error: huffman is not supported');
         args = [textRegion, header.referredTo, data, position, end];
@@ -38719,6 +38763,7 @@ var CMapFactory = (function CMapFactoryClosure() {
       expectString(obj);
       var src = strToInt(obj);
       obj = lexer.getObj();
+      // TODO are /dstName used?
       expectString(obj);
       var dst = obj;
       cMap.mapOne(src, dst);
@@ -38830,6 +38875,7 @@ var CMapFactory = (function CMapFactoryClosure() {
           case 'endcMap':
             break objLoop;
           case 'usecMap':
+            // TODO
             break;
           case 'begincodespacerange':
             parseCodespaceRange(cMap, lexer);
@@ -39410,6 +39456,7 @@ var JpegImage = (function jpegImage() {
       xhr.open("GET", path, true);
       xhr.responseType = "arraybuffer";
       xhr.onload = (function() {
+        // TODO catch parse error
         var data = new Uint8Array(xhr.response || xhr.mozResponseArrayBuffer);
         this.parse(data);
         if (this.onload)
@@ -39514,6 +39561,7 @@ var JpegImage = (function jpegImage() {
                 };
               }
             }
+            // TODO APP1 - Exif
             if (fileMarker === 0xFFEE) {
               if (appData[0] === 0x41 && appData[1] === 0x64 && appData[2] === 0x6F &&
                 appData[3] === 0x62 && appData[4] === 0x65 && appData[5] === 0) { // 'Adobe\x00'
