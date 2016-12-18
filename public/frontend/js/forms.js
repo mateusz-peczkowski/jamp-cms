@@ -58,7 +58,14 @@ function sendForm(form)
 					{	
 						if (response.redirect != null)
 						{
-							window.location.href = response.redirect
+							var dataAjax = $form.serializeArray();
+							var string = '';
+							$.each(dataAjax, function( key, value ) {
+					            string += '<input type="hidden" name="'+value['name']+'" value="'+value['value']+'">';
+					        });
+							var redirectform = $('<form action="' + response.redirect + '" method="post">'+ string +'</form>')
+							$('body').append(redirectform);
+							redirectform.submit();
 						}
 						else
 						{
