@@ -1,6 +1,6 @@
 @if($form = Form::byTag('contact'))
 <div class="contact-form">
-    <form method="post" action="/forms/submit/{{ $form->tag }}" class="ajax contact-form__form">
+    <form method="post" action="/forms/submit/{{ $form->tag }}" class="ajax contact-form">
         {{ FForm::message() }}
         {{ $form->token }}
         @foreach ($form->controls as $num_con => $control)

@@ -43,7 +43,7 @@ class Frontend_FormsController extends \Frontend_FrontendController
 			$validator = Validator::make($input, $rules);
 
 			if($validator->fails()) {
-				return $this->ReturnMsg(0, $validation, $ajax, $form);
+				return	$this->ReturnMsg(0, 'error_form_not_found', $form);
 			}
 
 			$now = new DateTime;

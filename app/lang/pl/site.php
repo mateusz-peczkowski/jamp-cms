@@ -4,6 +4,7 @@ return array(
 
 	'forms'	=>	array(
 		'thanks'	=>	'Dziękujemy za wysłanie formularza.',
+		'error_form_not_found'	=>	'Niestety wystąpił błąd. Formularz nie został wysłany',
 		'contact'	=>	array (
 			'button' =>	'Wyślij wiadomość'
 		)
