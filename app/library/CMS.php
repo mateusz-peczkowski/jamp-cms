@@ -106,7 +106,7 @@ class CMS
 		{
 			return self::render($error_page->controller, $error_page->parameters, array('page' => $error_page));
 		}
-		return Redirect::to('/');
+		return $status;
 	}
 
 	public static function checkRedirect($url = null)
