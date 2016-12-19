@@ -13,7 +13,7 @@
 		<h1 style="text-align: center; font: bold 12px/120% Verdana,sans-serif; margin: 0 0 10px;">Wypełniono formularz na {{ $domain }}</h1>
 
 		<div style="text-align: center; font: normal 12px/120% Verdana,sans-serif">
-			<img src="http://{{ $domain }}/images/emailTemplate.jpg" width="500" height="150" alt="{{ $domain }}" style="display: block; margin: 20px auto; width: 500px; height: 150px; overflow: hidden;" />
+			<img src="http://{{ $domain }}/img/emailTemplate.jpg" width="500" height="150" alt="{{ $domain }}" style="display: block; margin: 20px auto; width: 500px; height: 150px; overflow: hidden;" />
 			<div style="display: block; overflow: hidden; width: 100%; margin: 20px 0;">
 				@yield('body')
 			</div>
