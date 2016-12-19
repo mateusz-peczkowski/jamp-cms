@@ -34,6 +34,10 @@ class Frontend_FormsController extends \Frontend_FrontendController
 			}
 			*/
 
+			if(isset($input['lastsubmit'])) {
+				$input['lastsubmit'] = $form->submits ? count($form->submits) : $submit['lastsubmit'];
+			}
+
 			$rules = array(
 			    'email'     => "required|email",
 			    'my_name'   => 'honeypot',
@@ -158,9 +162,11 @@ class Frontend_FormsController extends \Frontend_FrontendController
 		$msg = trans('site.forms.' . $message);
 
 		$redirect = ($status AND Page::byTag('redirect_'.$form->tag)) ? Page::byTag('redirect_'.$form->tag)->url : null;
+
+		$lastsubmit = ($status AND $form->submits) ? count($form->submits) : null;
 		
 		if (Request::ajax()) 
-			return \Response::json(array('status' => $status, 'messages' => array($msg), 'redirect' => $redirect));
+			return \Response::json(array('status' => $status, 'messages' => array($msg), 'redirect' => $redirect, 'lastsubmit' => $lastsubmit));
 		else
 		{
 			// TODO
