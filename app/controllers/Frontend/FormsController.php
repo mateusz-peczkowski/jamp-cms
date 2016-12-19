@@ -163,10 +163,8 @@ class Frontend_FormsController extends \Frontend_FrontendController
 
 		$redirect = ($status AND Page::byTag('redirect_'.$form->tag)) ? Page::byTag('redirect_'.$form->tag)->url : null;
 
-		$lastsubmit = ($status AND $form->submits) ? count($form->submits) : null;
-		
 		if (Request::ajax()) 
-			return \Response::json(array('status' => $status, 'messages' => array($msg), 'redirect' => $redirect, 'lastsubmit' => $lastsubmit));
+			return \Response::json(array('status' => $status, 'messages' => array($msg), 'redirect' => $redirect));
 		else
 		{
 			// TODO

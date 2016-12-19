@@ -61,9 +61,6 @@ function sendForm(form)
 							var dataAjax = $form.serializeArray();
 							var string = '';
 							$.each(dataAjax, function( key, value ) {
-								if (value['name'] === 'lastsubmit') {
-									value['value'] = response.lastsubmit ? '#'+response.lastsubmit : value['value'];
-								}
 					            string += '<input type="hidden" name="'+value['name']+'" value="'+value['value']+'">';
 					        });
 							var redirectform = $('<form action="' + response.redirect + '" method="post">'+ string +'</form>')
