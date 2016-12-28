@@ -17,9 +17,9 @@
         @include('frontend.parts.footer')
 
         @section('scripts')
-            <script src="/js/app.js"></script>
-            <script src="/frontend/js/forms.js"></script>
-            <script src="/js/trans/{{\Config::get('app.locale')}}.js"></script>
+            <script src="/js/app.js{{ isset($VERSION) ? '?'.$VERSION : '' }}"></script>
+            <script src="/frontend/js/forms.js{{ isset($VERSION) ? '?'.$VERSION : '' }}"></script>
+            <script src="/js/trans/{{\Config::get('app.locale')}}.js{{ isset($VERSION) ? '?'.$VERSION : '' }}"></script>
         @show
 
         {{ $global_page->meta('footer') }}

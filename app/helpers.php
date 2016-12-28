@@ -72,3 +72,5 @@
 			View::share('cntSocial', $cntSocial);
 	    }
 	}
+
+	View::share('VERSION', '');
