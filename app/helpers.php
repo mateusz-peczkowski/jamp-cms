@@ -1,4 +1,6 @@
 <?php 
+	use Jenssegers\Agent\Agent;
+	
 	function homePage($ret) 
 	{
 		$homePage = Page::byTag('homePage') ? : false;
@@ -73,10 +75,23 @@
 	    }
 	}
 
-	use Jenssegers\Agent\Agent;
-	View::share('agent', new Agent());
-	// dd($agent->isTablet());
-	// dd($agent->isMobile());
+	function isMobile()
+	{
+		$agent = new Agent();
+		return $agent->isMobile();
+	}
+
+	function isTablet()
+	{
+		$agent = new Agent();
+		return $agent->isTablet();
+	}
+
+	function isDesktop()
+	{
+		$agent = new Agent();
+		return $agent->isDesktop();
+	}
 
 	// dd(time());
 	View::share('VERSION', '');
