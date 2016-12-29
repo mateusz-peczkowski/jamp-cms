@@ -109,38 +109,38 @@ return array(
             'action'   => 'index',
             'icon'  => 'gi gi-compass'
         ),
-        // array(
-        //     'name'  => trans('backend.article.index'),
-        //     'controller'    =>  'Backend_ArticlesController',
-        //     'action'        =>  'index',
-        //     'sub'   =>  array(
-        //         array(
-        //             'name'  => trans('backend.article.edit'),
-        //             'controller'    =>  'Backend_ArticlesController',
-        //             'action'        =>  'edit',
-        //             'visible'       =>  false,
-        //             ),
-        //         array(
-        //             'name'  => trans('backend.article.galleries'),
-        //             'controller'    =>  'Backend_ArticlesController',
-        //             'action'        =>  'galleries',
-        //             'visible'       =>  false,
-        //             ),
-        //         array(
-        //             'name'          =>  trans('backend.article.create'),
-        //             'controller'    =>  'Backend_ArticlesController',
-        //             'action'        =>  'create',
-        //             'visible'       =>  false,
-        //         ),
-        //         array(
-        //             'name'          =>  trans('backend.additional_data.title'),
-        //             'controller'    =>  'Backend_ArticlesController',
-        //             'action'        =>  'additional_data',
-        //             'visible'       =>  false,
-        //         ),
-        //     ),
-        //     'icon'  => 'fa fa-archive',
-        // ),
+        array(
+            'name'  => trans('backend.article.index'),
+            'controller'    =>  'Backend_ArticlesController',
+            'action'        =>  'index',
+            'sub'   =>  array(
+                array(
+                    'name'  => trans('backend.article.edit'),
+                    'controller'    =>  'Backend_ArticlesController',
+                    'action'        =>  'edit',
+                    'visible'       =>  false,
+                    ),
+                array(
+                    'name'  => trans('backend.article.galleries'),
+                    'controller'    =>  'Backend_ArticlesController',
+                    'action'        =>  'galleries',
+                    'visible'       =>  false,
+                    ),
+                array(
+                    'name'          =>  trans('backend.article.create'),
+                    'controller'    =>  'Backend_ArticlesController',
+                    'action'        =>  'create',
+                    'visible'       =>  false,
+                ),
+                array(
+                    'name'          =>  trans('backend.additional_data.title'),
+                    'controller'    =>  'Backend_ArticlesController',
+                    'action'        =>  'additional_data',
+                    'visible'       =>  false,
+                ),
+            ),
+            'icon'  => 'fa fa-archive',
+        ),
         array(
             'name'  => trans('backend.modules.show'),
             'icon'  => 'gi gi-airplane',

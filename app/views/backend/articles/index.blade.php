@@ -34,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($articles as $num-> $article)
+                    @foreach ($articles as $num=>$article)
                     <?php $change_status_action = $article->status ? 'deactivate' : 'activate'; ?>
                     <tr class="status-{{ $article->status }}">
                         <td class="text-center">{{ $num+1 < 10 ? '0' : '' }}{{ $num+1 }}</td>
