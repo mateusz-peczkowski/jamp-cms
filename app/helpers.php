@@ -73,4 +73,6 @@
 	    }
 	}
 
+	View::share('agent', new Agent());
+
 	View::share('VERSION', '');

@@ -126,7 +126,8 @@ return array(
 		'Neo\WpApi\WpApiServiceProvider',
 		'Conner\Kint\KintServiceProvider',
 		'Folklore\Image\ImageServiceProvider',
-		'Msurguy\Honeypot\HoneypotServiceProvider'
+		'Msurguy\Honeypot\HoneypotServiceProvider',
+		'Jenssegers\Agent\AgentServiceProvider'
 	),
 
 	/*
@@ -194,7 +195,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Honeypot'		  => 'Msurguy\Honeypot\HoneypotFacade'
+		'Honeypot'		  => 'Msurguy\Honeypot\HoneypotFacade',
+		'Agent'		      => 'Jenssegers\Agent\Facades\Agent'
 
 	),
 
