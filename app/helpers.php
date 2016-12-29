@@ -73,6 +73,9 @@
 	    }
 	}
 
+	// dd($agent->isTablet());
+	// dd($agent->isMobile());
 	View::share('agent', new Agent());
 
+	// dd(time());
 	View::share('VERSION', '');
