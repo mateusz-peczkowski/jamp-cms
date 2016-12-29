@@ -73,9 +73,10 @@
 	    }
 	}
 
+	use Jenssegers\Agent\Agent;
+	View::share('agent', new Agent());
 	// dd($agent->isTablet());
 	// dd($agent->isMobile());
-	View::share('agent', new Agent());
 
 	// dd(time());
 	View::share('VERSION', '');
