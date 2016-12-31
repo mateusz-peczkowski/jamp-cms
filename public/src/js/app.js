@@ -2,7 +2,9 @@
 require('headjs');
 require('jquery');
 require('jquerymigrate');
-require('fancybox');
+// require('fancybox');
+// require('imgliquid');
+// require('slick');
 
 import * as classListPolyFill from './bundle/helpers/classListPolyFill';
 
@@ -10,6 +12,8 @@ import * as classListPolyFill from './bundle/helpers/classListPolyFill';
 //imports
 classListPolyFill.init();
 import * as cookies from './bundle/functions/cookies';
+import * as mobileactions from './bundle/functions/mobileactions';
+// import * as imgliquid from './bundle/functions/imgliquid';
 // import * as filters from './bundle/functions/filters';
 // import * as sameheight from './bundle/functions/sameheight';
 // import * as fancybox from './bundle/functions/fancybox';
@@ -23,6 +27,8 @@ import * as cookies from './bundle/functions/cookies';
 $(document).ready(function() {
     'use strict';
 	cookies.init();
+	// imgliquid.init();
+	// mobileactions.init();
 	// filters.init();
 	// sameheight.init();
 	// fancybox.init();

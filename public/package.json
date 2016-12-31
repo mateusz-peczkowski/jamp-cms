@@ -54,7 +54,7 @@
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "jquerymigrate": "./bower_components/jquery-migrate/jquery-migrate.min.js",
     "imgliquid": "./bower_components/imgLiquid/js/imgLiquid.js",
-    "slick": "./js/edited/slick-edited.js",
+    "slick": "./bower_components/slick.js/slick/slick.js",
     "fancybox": "./bower_components/fancybox/source/jquery.fancybox.pack.js",
     "aos": "./bower_components/aos/dist/aos.js",
     "jquery.cookie": "./bower_components/jquery.cookie/jquery.cookie.js"
