@@ -466,16 +466,7 @@ class BaseModel extends \Eloquent {
 			->select('galleries.*')
 			->first();
 
-			if(!sizeof($gallery->medias) AND $defaultpage = Page::byTag('default')) {
-				$gallery = Gallery::leftJoin('element_galleries', 'element_galleries.gallery_id', '=', 'galleries.id')
-				->where('element_galleries.model', '=', static::ModelName())
-				->where('element_galleries.model_id', '=', $defaultpage->id)
-				->orderBy('order')
-				->select('galleries.*')
-				->first();
-			}
-
-		return $gallery;
+			return $gallery;
 		}
 	}
 
