@@ -12,6 +12,9 @@
 		&.expanded, &.centered {
 			float: none;
 		}
+		&.expanded {
+			padding: 0;
+		}
 		&.centered {
 			margin: 0 auto;
 		}
