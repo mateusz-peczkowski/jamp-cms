@@ -10,7 +10,8 @@
 		"rtconner/laravel-kint": "~0.0.0",
 		"folklore/image": "0.1.*",
 		"msurguy/honeypot": "^1.0",
-		"jenssegers/agent": "^2.4"
+		"jenssegers/agent": "^2.4",
+		"brouwers/shortcodes": "1.*"
 	},
 	"require-dev": {
     	"way/generators": "~2.0",

@@ -70,7 +70,7 @@ class Frontend_FrontendController extends \BaseController {
 	protected function view($view_default, $data = array())
 	{
 		$view_name = $this->getView($view_default);
-		return View::make('frontend.' . $view_name, $data);
+		return View::make('frontend.' . $view_name, $data)->withShortcodes();
 	}
 
 	protected function getView($view_default)

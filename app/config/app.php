@@ -127,7 +127,8 @@ return array(
 		'Conner\Kint\KintServiceProvider',
 		'Folklore\Image\ImageServiceProvider',
 		'Msurguy\Honeypot\HoneypotServiceProvider',
-		'Jenssegers\Agent\AgentServiceProvider'
+		'Jenssegers\Agent\AgentServiceProvider',
+		'Brouwers\Shortcodes\ShortcodesServiceProvider'
 	),
 
 	/*
@@ -196,7 +197,8 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Honeypot'		  => 'Msurguy\Honeypot\HoneypotFacade',
-		'Agent'		      => 'Jenssegers\Agent\Facades\Agent'
+		'Agent'		      => 'Jenssegers\Agent\Facades\Agent',
+		'Shortcode'       => 'Brouwers\Shortcodes\Facades\Shortcode'
 
 	),
 
