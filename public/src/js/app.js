@@ -33,6 +33,7 @@ $(document).ready(function() {
 	// sameheight.init();
 	// fancybox.init();
 	// slicks.horizontal($('.js-banners-top'), 1, true, true, false);
+	console.log('%cCreated by: %cJAMPstudio.pl%c -> %chttp://jampstudio.pl','color: #444','background: #2196F3; color: #fff; padding: 4px;','color: #444','color: #009fe3');
 });
 
 
