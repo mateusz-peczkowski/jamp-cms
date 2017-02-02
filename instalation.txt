@@ -1,7 +1,7 @@
 create repo
 #local
 clone repo
-git remote add jampsystem ssh://jampwinczi@94.152.36.27:22/home/users/jampwinczi/git/system/
+git remote add jampsystem git@gitlab.com:jampstudio/backend.git
 git pull jampsystem master
 git push origin master
 
