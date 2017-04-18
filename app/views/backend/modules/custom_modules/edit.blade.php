@@ -6,7 +6,7 @@
 
       	 @foreach ($custom_module_record->module->fields() as $field_name => $field_config)
 
-            {{ JForm::$field_config['type']('CustomModulesRecord__' . $field_name, $custom_module_record, array('label' => $field_config['title'])) }}
+            {{ JForm::{$field_config['type']}('CustomModulesRecord__' . $field_name, $custom_module_record, array('label' => $field_config['title'])) }}
 
             @endforeach
         {{ JForm::FormButtons() }}

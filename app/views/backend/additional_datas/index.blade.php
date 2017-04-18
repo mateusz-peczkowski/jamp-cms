@@ -9,7 +9,7 @@ if ($obj->connection('Profile'))
     {
         $additional_data = AdditionalData::search(array('model' => $obj::ModelName(), 'record' => $obj->id, 'name' => $field_name), 1);
         $disabled = (isset($field_data['translation']) && !$field_data['translation'] && Backend::IsTranslation());
-    	echo str_replace('AdditionalData__value', $field_name, JForm::$field_data['type']('AdditionalData__value', $additional_data, array('label' => $field_data['title'], 'disabled' => $disabled)));
+    	echo str_replace('AdditionalData__value', $field_name, JForm::{$field_data['type']}('AdditionalData__value', $additional_data, array('label' => $field_data['title'], 'disabled' => $disabled)));
     }
     echo JForm::FormButtons();
 	echo JForm::FormClose();
