@@ -4,7 +4,7 @@ class Backend_LoginController extends \BaseController {
 
 	public function index()
 	{
-		// var_dump(Hash::make('12JampStudio34')); exit;
+		// var_dump(Hash::make('test1234')); exit;
 		if (Auth::check())
 		{
 			$navigation = Navigation::active()->first();

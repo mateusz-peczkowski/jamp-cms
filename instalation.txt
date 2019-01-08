@@ -1,0 +1,31 @@
+create repo
+#local
+clone repo
+git remote add jampsystem git@gitlab.com:jampstudio/backend.git
+git pull jampsystem master
+git push origin master
+
+#server
+configurate autodeploy
+create blank database
+configurate .env file
+
+#local
+composer update
+configure .env and public/.domain_config.json
+composer env-init
+
+#grunt
+cd public/
+npm install
+npm start
+
+domyślnie tworzona jest polska wersja językowa
+jezeli strona ma być w innej wersji jezykowej:
+zmienić w bazie danych tabela languages
+i aplikacji app/config/app.php
+
+
+/cmsbackend 
+info@jampstudio.pl
+test1234
