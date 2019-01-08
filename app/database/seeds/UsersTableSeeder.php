@@ -6,7 +6,7 @@ class UsersTableSeeder extends Seeder {
 	{
 		User::create(array(
 			'email'	=>	'info@jampstudio.pl',
-			'password'	=>	Hash::make('12JampStudio34'),
+			'password'	=>	Hash::make('test1234'),
 			));
 	}
 
